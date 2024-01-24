@@ -1,0 +1,3751 @@
+{
+    "status": 200,
+    "message": "Item detail with Owner detail and Images",
+    "data": {
+        "itemdetail": {
+            "item": {
+                "itemId": 1,
+                "userId": 1,
+                "itemDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+                "categoryId": 1,
+                "subcategoryI": "Added",
+                "subcategoryIi": "New",
+                "condition": "Like new",
+                "size": "large",
+                "brandId": 1,
+                "color": "black",
+                "qunatity": 0,
+                "pickupAddress": "<string>",
+                "pickupCity": "<string>",
+                "pickupSubrub": "Ajman",
+                "pickupPostal": null,
+                "pickupStreetName": "<string>",
+                "pickupStreetNumber": null,
+                "freeDelivery": false,
+                "deliveryMethod": "parcel",
+                "sellingPrice": 50,
+                "retailPrice": 6666,
+                "approved": true,
+                "activeStatus": true,
+                "dateCreated": "2023-08-03T00:00:00",
+                "thumbnail": "https://api.wardrobesetc.com/Items_Images/c40d231d-ce97-42b5-b4b1-bc44f450de24.jpg",
+                "tags": "New,Women",
+                "lastupdatedDate": "2023-07-25T18:29:04.263",
+                "itemSold": true,
+                "dateSold": null,
+                "itemLikes": null,
+                "isliked": null,
+                "inCart": false
+            },
+            "user": {
+                "userId": 1,
+                "fname": "arslan",
+                "lname": "",
+                "email": "arsaln000@gmail.com",
+                "active": null,
+                "provider": "GOOGLE",
+                "shopId": "@arslan-et4f",
+                "date": null,
+                "lastUpdated": "2023-08-15T14:36:28.08",
+                "isonline": true,
+                "storeLikes": 0,
+                "image": "https://lh3.googleusercontent.com/a/AAcHTtdViRhOitYKaOl3F4stvH1upfQSEf06IRvjaEHagZhErA=s96-c",
+                "coverImage": "https://api.wardrobesetc.com/profile_images/banner.webp",
+                "insta": "",
+                "linkedin": "",
+                "website": null,
+                "description": "",
+                "holiday": false,
+                "language": "en",
+                "theme": "light",
+                "away": false,
+                "storelocked": false,
+                "phone": "03226964464",
+                "address": "Str No 1",
+                "city": "Dubai",
+                "suburb": "Dubai",
+                "postal": "56130",
+                "streetName": "Str",
+                "streetNumber": "10",
+                "fcmToken": "",
+                "role": "User",
+                "brevoId": "0",
+                "telrId": null,
+                "receiveEmails": true,
+                "permotinalEmails": true,
+                "balance": 0,
+                "isLogin": true,
+                "totalItems": 1,
+                "fbId": "0",
+                "comission": 0,
+                "emailVerified": false,
+                "phoneVerified": false,
+                "itemsSold": 50,
+                "pushNotification": null
+            },
+            "category": {
+                "categoryId": 1,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/19d9477f-4579-4bd3-b2d2-4d9f48e4d022.jpg",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/c0daa0d1-1a28-4724-a429-177b6a597525.webp",
+                "categoryName": "Women",
+                "active": null
+            },
+            "brand": {
+                "brandId": 1,
+                "brandImage": null,
+                "brandName": "Actvitta",
+                "active": null,
+                "brandLikes": 0
+            }
+        },
+        "images": [
+            {
+                "id": 1,
+                "itemId": 1,
+                "imageUrl": "https://api.wardrobesetc.com/Items_Images/c40d231d-ce97-42b5-b4b1-bc44f450de24.jpg"
+            },
+            {
+                "id": 3,
+                "itemId": 1,
+                "imageUrl": "https://api.wardrobesetc.com/Items_Images/8ccb43d7-5a17-4666-9da1-c1a8085bc9ff.jpg"
+            }
+        ],
+        "categories": [
+            {
+                "categoryId": 1,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/19d9477f-4579-4bd3-b2d2-4d9f48e4d022.jpg",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/c0daa0d1-1a28-4724-a429-177b6a597525.webp",
+                "categoryName": "Women",
+                "active": true
+            },
+            {
+                "categoryId": 2,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/b998b525-4736-482f-baba-a29450be8ce5.webp",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/c0ce7ca9-8f4d-4904-a888-c189ee770f53.webp",
+                "categoryName": "Men",
+                "active": true
+            },
+            {
+                "categoryId": 3,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/97fd19bf-bec5-43b5-a7f4-8dbc87793efb.webp",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/79af5318-3387-4625-8eb7-309a44bd3eab.webp",
+                "categoryName": "Kids",
+                "active": true
+            },
+            {
+                "categoryId": 4,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/88031b70-b709-4ae5-970c-9b666894f2a7.webp",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/d15d5ad5-3201-4e9a-b1e4-1b94182f53ab.webp",
+                "categoryName": "Beauty",
+                "active": true
+            },
+            {
+                "categoryId": 5,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/aaf88c2b-acf4-4f15-91c9-4189e1b7a194.webp",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/1d58fe6d-ce5d-43f9-b794-1da543382cbf.webp",
+                "categoryName": "Accessories",
+                "active": true
+            },
+            {
+                "categoryId": 6,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/7a2802bf-b472-40c6-9548-9b13760ceca0.webp",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/d41ed7d1-6084-4b8e-9bd3-09902ae61f3e.webp",
+                "categoryName": "Sports & Leisure",
+                "active": true
+            },
+            {
+                "categoryId": 7,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/76955ef0-c758-4d43-beeb-775fb2c5cdf7.webp",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/7e7c0e5e-b570-4e75-b482-997f2fd4a178.webp",
+                "categoryName": "Footwear",
+                "active": true
+            },
+            {
+                "categoryId": 8,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/c8c7d527-8358-43fd-b291-d95dc1a1d118.webp",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/033966ae-8bea-4459-9c61-d5ab10e46842.webp",
+                "categoryName": "Others",
+                "active": true
+            },
+            {
+                "categoryId": 9,
+                "categoryImage": "https://api.wardrobesetc.com/category_images/54e10ca6-2f2a-46eb-92fe-1ec75a477fd5.jpg",
+                "categoryBanner": "https://api.wardrobesetc.com/category_images/6a95d9be-cf7b-4dad-8111-48d553048922.jpg",
+                "categoryName": "High end fashion",
+                "active": true
+            }
+        ],
+        "brands": [
+            {
+                "brandId": 1,
+                "brandImage": null,
+                "brandName": "Actvitta",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 2,
+                "brandImage": null,
+                "brandName": "Adidas",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 3,
+                "brandImage": null,
+                "brandName": "Adidas originals",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 4,
+                "brandImage": null,
+                "brandName": "Aeropostale",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 5,
+                "brandImage": null,
+                "brandName": "Ajmal",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 6,
+                "brandImage": null,
+                "brandName": "Aldo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 7,
+                "brandImage": null,
+                "brandName": "Alpha industries",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 8,
+                "brandImage": null,
+                "brandName": "American eagle",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 9,
+                "brandImage": null,
+                "brandName": "Another influence",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 10,
+                "brandImage": null,
+                "brandName": "Anta",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 11,
+                "brandImage": null,
+                "brandName": "Apothecary 87",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 12,
+                "brandImage": null,
+                "brandName": "Arcminute",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 13,
+                "brandImage": null,
+                "brandName": "Armani exchange",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 14,
+                "brandImage": null,
+                "brandName": "Arnette",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 15,
+                "brandImage": null,
+                "brandName": "Asics",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 16,
+                "brandImage": null,
+                "brandName": "Asobu",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 17,
+                "brandImage": null,
+                "brandName": "Aveda",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 18,
+                "brandImage": null,
+                "brandName": "Bait_al_kandora",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 19,
+                "brandImage": null,
+                "brandName": "Balmain hair couture",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 20,
+                "brandImage": null,
+                "brandName": "Balenciaga",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 21,
+                "brandImage": null,
+                "brandName": "Banana republic",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 22,
+                "brandImage": null,
+                "brandName": "Barbour",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 23,
+                "brandImage": null,
+                "brandName": "Batman",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 24,
+                "brandImage": null,
+                "brandName": "Beardburys",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 25,
+                "brandImage": null,
+                "brandName": "Ben sherman",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 26,
+                "brandImage": null,
+                "brandName": "Beverly hills polo club",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 27,
+                "brandImage": null,
+                "brandName": "Birkenstock",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 28,
+                "brandImage": null,
+                "brandName": "Blood brother",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 29,
+                "brandImage": null,
+                "brandName": "Body sculpture",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 30,
+                "brandImage": null,
+                "brandName": "Boohooman",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 31,
+                "brandImage": null,
+                "brandName": "Boss",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 32,
+                "brandImage": null,
+                "brandName": "Brave soul",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 33,
+                "brandImage": null,
+                "brandName": "Brooks brothers",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 34,
+                "brandImage": null,
+                "brandName": "Burton",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 36,
+                "brandImage": null,
+                "brandName": "Bvlgari",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 37,
+                "brandImage": null,
+                "brandName": "Call it spring",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 38,
+                "brandImage": null,
+                "brandName": "Calvin klein",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 39,
+                "brandImage": null,
+                "brandName": "Calvin klein jeans",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 40,
+                "brandImage": null,
+                "brandName": "Calvin klein performance",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 41,
+                "brandImage": null,
+                "brandName": "Camelbak",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 42,
+                "brandImage": null,
+                "brandName": "Campus sutra",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 43,
+                "brandImage": null,
+                "brandName": "Canali",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 44,
+                "brandImage": null,
+                "brandName": "Carrera",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 45,
+                "brandImage": null,
+                "brandName": "Casio",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 46,
+                "brandImage": null,
+                "brandName": "Cayler & sons",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 47,
+                "brandImage": null,
+                "brandName": "Ccc",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 48,
+                "brandImage": null,
+                "brandName": "Celio",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 49,
+                "brandImage": null,
+                "brandName": "Cerruti 1881",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 50,
+                "brandImage": null,
+                "brandName": "Champion",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 51,
+                "brandImage": null,
+                "brandName": "Chanel",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 52,
+                "brandImage": null,
+                "brandName": "Chloe",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 53,
+                "brandImage": null,
+                "brandName": "Clinique",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 54,
+                "brandImage": null,
+                "brandName": "Coach",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 55,
+                "brandImage": null,
+                "brandName": "Coega",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 56,
+                "brandImage": null,
+                "brandName": "Cole haan",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 57,
+                "brandImage": null,
+                "brandName": "Columbia",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 58,
+                "brandImage": null,
+                "brandName": "Comfort plus",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 59,
+                "brandImage": null,
+                "brandName": "Converse",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 60,
+                "brandImage": null,
+                "brandName": "Cotton on",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 61,
+                "brandImage": null,
+                "brandName": "Crep protect",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 62,
+                "brandImage": null,
+                "brandName": "Criminal damage",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 63,
+                "brandImage": null,
+                "brandName": "Crocs",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 64,
+                "brandImage": null,
+                "brandName": "Dagi",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 65,
+                "brandImage": null,
+                "brandName": "David beckham",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 66,
+                "brandImage": null,
+                "brandName": "Davidoff",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 67,
+                "brandImage": null,
+                "brandName": "Dedicated",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 68,
+                "brandImage": null,
+                "brandName": "Defacto",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 69,
+                "brandImage": null,
+                "brandName": "Deus ex machina",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 70,
+                "brandImage": null,
+                "brandName": "Devoiler",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 71,
+                "brandImage": null,
+                "brandName": "Diadora",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 72,
+                "brandImage": null,
+                "brandName": "Dickies",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 73,
+                "brandImage": null,
+                "brandName": "Diesel",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 74,
+                "brandImage": null,
+                "brandName": "Difuzed",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 75,
+                "brandImage": null,
+                "brandName": "Disney",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 76,
+                "brandImage": null,
+                "brandName": "Dior",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 77,
+                "brandImage": null,
+                "brandName": "Ducati corse",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 78,
+                "brandImage": null,
+                "brandName": "Duchini",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 79,
+                "brandImage": null,
+                "brandName": "Dune london",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 80,
+                "brandImage": null,
+                "brandName": "Dunlop",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 81,
+                "brandImage": null,
+                "brandName": "Dolce & gabbana",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 82,
+                "brandImage": null,
+                "brandName": "Dwell",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 83,
+                "brandImage": null,
+                "brandName": "Ea7 emporio armani",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 84,
+                "brandImage": null,
+                "brandName": "Edwin",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 85,
+                "brandImage": null,
+                "brandName": "Element",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 86,
+                "brandImage": null,
+                "brandName": "Ellesse",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 87,
+                "brandImage": null,
+                "brandName": "Ermenegildo zegna",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 88,
+                "brandImage": null,
+                "brandName": "Estee lauder",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 89,
+                "brandImage": null,
+                "brandName": "Emporio armani",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 90,
+                "brandImage": null,
+                "brandName": "Everlast",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 91,
+                "brandImage": null,
+                "brandName": "Fabindia",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 92,
+                "brandImage": null,
+                "brandName": "Fastrack",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 93,
+                "brandImage": null,
+                "brandName": "Ferrari",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 94,
+                "brandImage": null,
+                "brandName": "Ferre milano",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 95,
+                "brandImage": null,
+                "brandName": "Fendi",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 96,
+                "brandImage": null,
+                "brandName": "Fila",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 97,
+                "brandImage": null,
+                "brandName": "Fingercroxx",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 98,
+                "brandImage": null,
+                "brandName": "Fitbit",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 99,
+                "brandImage": null,
+                "brandName": "Fitflop",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 100,
+                "brandImage": null,
+                "brandName": "Florsheim",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 101,
+                "brandImage": null,
+                "brandName": "Fio",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 102,
+                "brandImage": null,
+                "brandName": "Fossil",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 103,
+                "brandImage": null,
+                "brandName": "Fred perry",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 104,
+                "brandImage": null,
+                "brandName": "French accent",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 105,
+                "brandImage": null,
+                "brandName": "French connection",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 106,
+                "brandImage": null,
+                "brandName": "Friends",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 107,
+                "brandImage": null,
+                "brandName": "Frwd",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 108,
+                "brandImage": null,
+                "brandName": "Funko",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 109,
+                "brandImage": null,
+                "brandName": "Games of thrones",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 110,
+                "brandImage": null,
+                "brandName": "Gant",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 111,
+                "brandImage": null,
+                "brandName": "Gentlemens tonic",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 112,
+                "brandImage": null,
+                "brandName": "Geoomnii",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 113,
+                "brandImage": null,
+                "brandName": "Giorgio armani",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 114,
+                "brandImage": null,
+                "brandName": "Geox",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 115,
+                "brandImage": null,
+                "brandName": "Givenchy",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 116,
+                "brandImage": null,
+                "brandName": "Good for nothing",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 117,
+                "brandImage": null,
+                "brandName": "Goorin bros",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 118,
+                "brandImage": null,
+                "brandName": "Grimey",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 119,
+                "brandImage": null,
+                "brandName": "Guess",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 120,
+                "brandImage": null,
+                "brandName": "Gucci",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 121,
+                "brandImage": null,
+                "brandName": "Gym clothing co.",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 122,
+                "brandImage": null,
+                "brandName": "Gym king",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 123,
+                "brandImage": null,
+                "brandName": "Hackett",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 124,
+                "brandImage": null,
+                "brandName": "Happy socks",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 125,
+                "brandImage": null,
+                "brandName": "Harry potter",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 126,
+                "brandImage": null,
+                "brandName": "Harvard",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 127,
+                "brandImage": null,
+                "brandName": "Havaianas",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 128,
+                "brandImage": null,
+                "brandName": "Head watches",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 129,
+                "brandImage": null,
+                "brandName": "Herschel supply co.",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 130,
+                "brandImage": null,
+                "brandName": "Hermes",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 131,
+                "brandImage": null,
+                "brandName": "Highlander",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 132,
+                "brandImage": null,
+                "brandName": "Hoka",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 133,
+                "brandImage": null,
+                "brandName": "Hoog",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 134,
+                "brandImage": null,
+                "brandName": "Huf",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 135,
+                "brandImage": null,
+                "brandName": "Hugo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 136,
+                "brandImage": null,
+                "brandName": "Hugo boss",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 137,
+                "brandImage": null,
+                "brandName": "Hugo_performance",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 138,
+                "brandImage": null,
+                "brandName": "Hummel",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 139,
+                "brandImage": null,
+                "brandName": "Hush puppies",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 140,
+                "brandImage": null,
+                "brandName": "Hxtn supply",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 141,
+                "brandImage": null,
+                "brandName": "Hype",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 142,
+                "brandImage": null,
+                "brandName": "Iceberg",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 143,
+                "brandImage": null,
+                "brandName": "Iconic",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 144,
+                "brandImage": null,
+                "brandName": "Ikks",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 145,
+                "brandImage": null,
+                "brandName": "Indosole",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 146,
+                "brandImage": null,
+                "brandName": "Instafab",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 147,
+                "brandImage": null,
+                "brandName": "Instafab plus",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 148,
+                "brandImage": null,
+                "brandName": "Itouch",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 149,
+                "brandImage": null,
+                "brandName": "Izzue",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 150,
+                "brandImage": null,
+                "brandName": "Jack black",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 151,
+                "brandImage": null,
+                "brandName": "Jack & jones",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 152,
+                "brandImage": null,
+                "brandName": "Jason markk",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 153,
+                "brandImage": null,
+                "brandName": "Jeepers & peepers",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 154,
+                "brandImage": null,
+                "brandName": "Jimmy choo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 155,
+                "brandImage": null,
+                "brandName": "John varvatos",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 156,
+                "brandImage": null,
+                "brandName": "Joop",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 157,
+                "brandImage": null,
+                "brandName": "Jordan",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 158,
+                "brandImage": null,
+                "brandName": "Kate spade",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 159,
+                "brandImage": null,
+                "brandName": "Kangaroos",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 160,
+                "brandImage": null,
+                "brandName": "Kappa",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 161,
+                "brandImage": null,
+                "brandName": "Karl kani",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 162,
+                "brandImage": null,
+                "brandName": "Karl keller",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 163,
+                "brandImage": null,
+                "brandName": "Karl lagerfeld",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 164,
+                "brandImage": null,
+                "brandName": "Kenneth cole",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 165,
+                "brandImage": null,
+                "brandName": "Kerastase",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 166,
+                "brandImage": null,
+                "brandName": "Koton",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 167,
+                "brandImage": null,
+                "brandName": "Lab series",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 168,
+                "brandImage": null,
+                "brandName": "Lacoste",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 169,
+                "brandImage": null,
+                "brandName": "Lanvin",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 170,
+                "brandImage": null,
+                "brandName": "Le confort",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 171,
+                "brandImage": null,
+                "brandName": "Lee",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 172,
+                "brandImage": null,
+                "brandName": "Lee cooper",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 173,
+                "brandImage": null,
+                "brandName": "Levi`s",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 174,
+                "brandImage": null,
+                "brandName": "Limitato",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 175,
+                "brandImage": null,
+                "brandName": "Lious vuitton",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 176,
+                "brandImage": null,
+                "brandName": "Liverpool fc",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 177,
+                "brandImage": null,
+                "brandName": "L`oreal men expert",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 178,
+                "brandImage": null,
+                "brandName": "Makia",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 179,
+                "brandImage": null,
+                "brandName": "Mango",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 180,
+                "brandImage": null,
+                "brandName": "Mango man",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 181,
+                "brandImage": null,
+                "brandName": "Marc jacobs",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 182,
+                "brandImage": null,
+                "brandName": "Marks & spencer",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 183,
+                "brandImage": null,
+                "brandName": "Marvel",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 184,
+                "brandImage": null,
+                "brandName": "Mast & harbour",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 185,
+                "brandImage": null,
+                "brandName": "Michael kors",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 186,
+                "brandImage": null,
+                "brandName": "Mihyar",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 187,
+                "brandImage": null,
+                "brandName": "Mister tee",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 188,
+                "brandImage": null,
+                "brandName": "Mitchell & ness",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 189,
+                "brandImage": null,
+                "brandName": "Mpl sports",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 190,
+                "brandImage": null,
+                "brandName": "Muji",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 191,
+                "brandImage": null,
+                "brandName": "Musium div.",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 192,
+                "brandImage": null,
+                "brandName": "Mvmt",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 193,
+                "brandImage": null,
+                "brandName": "Mont blanc",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 194,
+                "brandImage": null,
+                "brandName": "Moschino",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 195,
+                "brandImage": null,
+                "brandName": "Namshi x kareem",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 196,
+                "brandImage": null,
+                "brandName": "Napapijri",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 197,
+                "brandImage": null,
+                "brandName": "Natural world eco",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 198,
+                "brandImage": null,
+                "brandName": "Nautica",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 199,
+                "brandImage": null,
+                "brandName": "New balance",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 200,
+                "brandImage": null,
+                "brandName": "New era",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 201,
+                "brandImage": null,
+                "brandName": "New look",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 202,
+                "brandImage": null,
+                "brandName": "Nicce",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 203,
+                "brandImage": null,
+                "brandName": "Nike",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 204,
+                "brandImage": null,
+                "brandName": "Nine west",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 205,
+                "brandImage": null,
+                "brandName": "Nixon",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 206,
+                "brandImage": null,
+                "brandName": "Nordgreen",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 207,
+                "brandImage": null,
+                "brandName": "The north face",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 208,
+                "brandImage": null,
+                "brandName": "Nuxe",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 209,
+                "brandImage": null,
+                "brandName": "Oakley",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 210,
+                "brandImage": null,
+                "brandName": "Obaku",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 211,
+                "brandImage": null,
+                "brandName": "Obey",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 212,
+                "brandImage": null,
+                "brandName": "On running",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 213,
+                "brandImage": null,
+                "brandName": "Onitsuka tiger",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 214,
+                "brandImage": null,
+                "brandName": "Only & sons",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 215,
+                "brandImage": null,
+                "brandName": "Outerstuff",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 216,
+                "brandImage": null,
+                "brandName": "Ovs",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 217,
+                "brandImage": null,
+                "brandName": "Pandora",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 218,
+                "brandImage": null,
+                "brandName": "People f21",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 219,
+                "brandImage": null,
+                "brandName": "Pit viper",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 220,
+                "brandImage": null,
+                "brandName": "Polaroid",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 221,
+                "brandImage": null,
+                "brandName": "Poler",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 222,
+                "brandImage": null,
+                "brandName": "Police",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 223,
+                "brandImage": null,
+                "brandName": "Polo ralph lauren",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 224,
+                "brandImage": null,
+                "brandName": "Posh la vie",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 225,
+                "brandImage": null,
+                "brandName": "Prada",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 226,
+                "brandImage": null,
+                "brandName": "Prickly pear",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 227,
+                "brandImage": null,
+                "brandName": "Primitive",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 228,
+                "brandImage": null,
+                "brandName": "Produkt",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 229,
+                "brandImage": null,
+                "brandName": "Ps paul smith",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 230,
+                "brandImage": null,
+                "brandName": "Pull & bear",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 231,
+                "brandImage": null,
+                "brandName": "Puma",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 232,
+                "brandImage": null,
+                "brandName": "Punto",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 233,
+                "brandImage": null,
+                "brandName": "Ralph lauren",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 234,
+                "brandImage": null,
+                "brandName": "Rastaclat",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 235,
+                "brandImage": null,
+                "brandName": "Ray-ban",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 236,
+                "brandImage": null,
+                "brandName": "R&b",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 237,
+                "brandImage": null,
+                "brandName": "Red tape",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 238,
+                "brandImage": null,
+                "brandName": "Reebok",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 239,
+                "brandImage": null,
+                "brandName": "Reiss",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 240,
+                "brandImage": null,
+                "brandName": "Rip n dip",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 241,
+                "brandImage": null,
+                "brandName": "Rituals",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 242,
+                "brandImage": null,
+                "brandName": "River island",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 243,
+                "brandImage": null,
+                "brandName": "Robert wood",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 244,
+                "brandImage": null,
+                "brandName": "Roberto cavalli",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 245,
+                "brandImage": null,
+                "brandName": "Rockport",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 246,
+                "brandImage": null,
+                "brandName": "Rusace",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 247,
+                "brandImage": null,
+                "brandName": "Sacoor brothers",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 248,
+                "brandImage": null,
+                "brandName": "Saint honore paris",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 249,
+                "brandImage": null,
+                "brandName": "Salvatore ferragamo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 250,
+                "brandImage": null,
+                "brandName": "Sass & belle",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 251,
+                "brandImage": null,
+                "brandName": "Seb man",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 252,
+                "brandImage": null,
+                "brandName": "Selected homme",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 253,
+                "brandImage": null,
+                "brandName": "Selfie",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 254,
+                "brandImage": null,
+                "brandName": "Semir",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 255,
+                "brandImage": null,
+                "brandName": "Seventy five",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 256,
+                "brandImage": null,
+                "brandName": "Seventy five basics",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 257,
+                "brandImage": null,
+                "brandName": "Shoexpress",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 258,
+                "brandImage": null,
+                "brandName": "Siksilk",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 259,
+                "brandImage": null,
+                "brandName": "Sivvi x d'atelier",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 260,
+                "brandImage": null,
+                "brandName": "Skagen",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 261,
+                "brandImage": null,
+                "brandName": "Skechers",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 262,
+                "brandImage": null,
+                "brandName": "Sneaker lab",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 263,
+                "brandImage": null,
+                "brandName": "Sohi",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 264,
+                "brandImage": null,
+                "brandName": "Sp characters",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 265,
+                "brandImage": null,
+                "brandName": "Speedo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 266,
+                "brandImage": null,
+                "brandName": "Spiral",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 267,
+                "brandImage": null,
+                "brandName": "Springfield",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 268,
+                "brandImage": null,
+                "brandName": "Stance",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 269,
+                "brandImage": null,
+                "brandName": "Starwars",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 270,
+                "brandImage": null,
+                "brandName": "Straye",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 271,
+                "brandImage": null,
+                "brandName": "Styli",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 272,
+                "brandImage": null,
+                "brandName": "Superdry",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 273,
+                "brandImage": null,
+                "brandName": "Swarovski",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 274,
+                "brandImage": null,
+                "brandName": "Swiss military",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 275,
+                "brandImage": null,
+                "brandName": "Tamashee",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 276,
+                "brandImage": null,
+                "brandName": "Ted baker",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 277,
+                "brandImage": null,
+                "brandName": "The emirates",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 278,
+                "brandImage": null,
+                "brandName": "The giving movement",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 279,
+                "brandImage": null,
+                "brandName": "The gold gods",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 280,
+                "brandImage": null,
+                "brandName": "The hundreds",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 281,
+                "brandImage": null,
+                "brandName": "The suicide squad",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 282,
+                "brandImage": null,
+                "brandName": "Tiffany & co.",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 283,
+                "brandImage": null,
+                "brandName": "Timberland",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 284,
+                "brandImage": null,
+                "brandName": "Titan",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 285,
+                "brandImage": null,
+                "brandName": "Tommy hilfiger",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 286,
+                "brandImage": null,
+                "brandName": "Tommy hilfiger sport",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 287,
+                "brandImage": null,
+                "brandName": "Tommy jeans",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 288,
+                "brandImage": null,
+                "brandName": "Tommy sport",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 289,
+                "brandImage": null,
+                "brandName": "Toms",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 290,
+                "brandImage": null,
+                "brandName": "Tom ford",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 291,
+                "brandImage": null,
+                "brandName": "Topman",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 292,
+                "brandImage": null,
+                "brandName": "Trendyol",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 293,
+                "brandImage": null,
+                "brandName": "Tribe of 6",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 294,
+                "brandImage": null,
+                "brandName": "U.s. polo assn.",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 295,
+                "brandImage": null,
+                "brandName": "Ucla",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 296,
+                "brandImage": null,
+                "brandName": "Umbro",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 297,
+                "brandImage": null,
+                "brandName": "Under armour",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 298,
+                "brandImage": null,
+                "brandName": "United colors of benetton",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 299,
+                "brandImage": null,
+                "brandName": "United colors of benneton",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 300,
+                "brandImage": null,
+                "brandName": "Us polo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 301,
+                "brandImage": null,
+                "brandName": "Valentino",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 302,
+                "brandImage": null,
+                "brandName": "Vans",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 303,
+                "brandImage": null,
+                "brandName": "Venum",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 304,
+                "brandImage": null,
+                "brandName": "Vera wang",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 305,
+                "brandImage": null,
+                "brandName": "Versace",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 306,
+                "brandImage": null,
+                "brandName": "Versus versace",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 307,
+                "brandImage": null,
+                "brandName": "Vichy",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 308,
+                "brandImage": null,
+                "brandName": "Victorinox",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 309,
+                "brandImage": null,
+                "brandName": "Vital",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 310,
+                "brandImage": null,
+                "brandName": "Vogue",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 311,
+                "brandImage": null,
+                "brandName": "Volcom",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 312,
+                "brandImage": null,
+                "brandName": "Wallopedia",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 313,
+                "brandImage": null,
+                "brandName": "Warner bros",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 314,
+                "brandImage": null,
+                "brandName": "Wknd",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 315,
+                "brandImage": null,
+                "brandName": "Wrangler",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 316,
+                "brandImage": null,
+                "brandName": "Wrogn",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 317,
+                "brandImage": null,
+                "brandName": "Zarssen",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 318,
+                "brandImage": null,
+                "brandName": "11 degrees",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 319,
+                "brandImage": null,
+                "brandName": "87 origins",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 320,
+                "brandImage": null,
+                "brandName": "Beauty products",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 321,
+                "brandImage": null,
+                "brandName": "Acqua di parma",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 322,
+                "brandImage": null,
+                "brandName": "Amika",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 323,
+                "brandImage": null,
+                "brandName": "Anastasia beverly hills",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 324,
+                "brandImage": null,
+                "brandName": "Aquis",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 325,
+                "brandImage": null,
+                "brandName": "Armani",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 326,
+                "brandImage": null,
+                "brandName": "Augustinus bader",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 328,
+                "brandImage": null,
+                "brandName": "Bdk parfums",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 329,
+                "brandImage": null,
+                "brandName": "Beautyblender",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 330,
+                "brandImage": null,
+                "brandName": "Benefit cosmetics",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 331,
+                "brandImage": null,
+                "brandName": "Bobbi brown",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 332,
+                "brandImage": null,
+                "brandName": "Briogeo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 333,
+                "brandImage": null,
+                "brandName": "Burberry",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 335,
+                "brandImage": null,
+                "brandName": "Carolina herrera",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 336,
+                "brandImage": null,
+                "brandName": "Cartier",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 338,
+                "brandImage": null,
+                "brandName": "Chlo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 339,
+                "brandImage": null,
+                "brandName": "Clarins",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 342,
+                "brandImage": null,
+                "brandName": "Dior backstage",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 344,
+                "brandImage": null,
+                "brandName": "Dr dennis gross",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 345,
+                "brandImage": null,
+                "brandName": "Dr. barbara sturm",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 346,
+                "brandImage": null,
+                "brandName": "Dr.jart+",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 347,
+                "brandImage": null,
+                "brandName": "Drunk elephant",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 348,
+                "brandImage": null,
+                "brandName": "Dyson",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 349,
+                "brandImage": null,
+                "brandName": "Elemis",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 350,
+                "brandImage": null,
+                "brandName": "Este lauder",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 351,
+                "brandImage": null,
+                "brandName": "Fable & mane",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 352,
+                "brandImage": null,
+                "brandName": "Fenty beauty",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 353,
+                "brandImage": null,
+                "brandName": "Fenty skin",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 354,
+                "brandImage": null,
+                "brandName": "Foreo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 355,
+                "brandImage": null,
+                "brandName": "Ghd",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 356,
+                "brandImage": null,
+                "brandName": "Gisou",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 358,
+                "brandImage": null,
+                "brandName": "Glow recipe",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 359,
+                "brandImage": null,
+                "brandName": "Grande cosmetics",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 361,
+                "brandImage": null,
+                "brandName": "Guerlain",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 363,
+                "brandImage": null,
+                "brandName": "Hourglass",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 364,
+                "brandImage": null,
+                "brandName": "Huda beauty",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 366,
+                "brandImage": null,
+                "brandName": "Isle of paradise",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 367,
+                "brandImage": null,
+                "brandName": "It cosmetics",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 368,
+                "brandImage": null,
+                "brandName": "Jean paul gaultier",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 369,
+                "brandImage": null,
+                "brandName": "Jo malone london",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 370,
+                "brandImage": null,
+                "brandName": "Kayali",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 371,
+                "brandImage": null,
+                "brandName": "Kilian paris",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 372,
+                "brandImage": null,
+                "brandName": "Kvd beauty",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 373,
+                "brandImage": null,
+                "brandName": "Krastase",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 374,
+                "brandImage": null,
+                "brandName": "L`occitane",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 375,
+                "brandImage": null,
+                "brandName": "L`oral professionnel",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 376,
+                "brandImage": null,
+                "brandName": "La mer",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 377,
+                "brandImage": null,
+                "brandName": "Lancme",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 378,
+                "brandImage": null,
+                "brandName": "Laneige",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 379,
+                "brandImage": null,
+                "brandName": "Laura mercier",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 380,
+                "brandImage": null,
+                "brandName": "Lilly lashes",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 381,
+                "brandImage": null,
+                "brandName": "Loewe",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 382,
+                "brandImage": null,
+                "brandName": "Maison francis kurkdjian",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 383,
+                "brandImage": null,
+                "brandName": "Maison margiela",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 384,
+                "brandImage": null,
+                "brandName": "Make up for ever",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 385,
+                "brandImage": null,
+                "brandName": "Makeup by mario",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 386,
+                "brandImage": null,
+                "brandName": "Mario badescu",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 387,
+                "brandImage": null,
+                "brandName": "Memo",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 388,
+                "brandImage": null,
+                "brandName": "Milk makeup",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 389,
+                "brandImage": null,
+                "brandName": "Montblanc",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 390,
+                "brandImage": null,
+                "brandName": "Narciso rodriguez",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 391,
+                "brandImage": null,
+                "brandName": "Nars",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 392,
+                "brandImage": null,
+                "brandName": "Natasha denona",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 393,
+                "brandImage": null,
+                "brandName": "Ne`emah",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 394,
+                "brandImage": null,
+                "brandName": "Nest",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 395,
+                "brandImage": null,
+                "brandName": "Nudestix",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 397,
+                "brandImage": null,
+                "brandName": "Olehenriksen",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 398,
+                "brandImage": null,
+                "brandName": "Origins",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 399,
+                "brandImage": null,
+                "brandName": "Paco rabanne",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 400,
+                "brandImage": null,
+                "brandName": "Parfums de marly",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 401,
+                "brandImage": null,
+                "brandName": "Pat mcgrath labs",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 402,
+                "brandImage": null,
+                "brandName": "Peace out skincare",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 403,
+                "brandImage": null,
+                "brandName": "Peacefull",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 404,
+                "brandImage": null,
+                "brandName": "Penhaligon's",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 405,
+                "brandImage": null,
+                "brandName": "Pixi",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 407,
+                "brandImage": null,
+                "brandName": "Rare beauty",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 410,
+                "brandImage": null,
+                "brandName": "Sephora collection",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 411,
+                "brandImage": null,
+                "brandName": "Sephora favorites",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 412,
+                "brandImage": null,
+                "brandName": "Shiffa",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 413,
+                "brandImage": null,
+                "brandName": "Shiseido",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 414,
+                "brandImage": null,
+                "brandName": "Skin gym",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 415,
+                "brandImage": null,
+                "brandName": "Slick hair company",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 416,
+                "brandImage": null,
+                "brandName": "Slip",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 417,
+                "brandImage": null,
+                "brandName": "Sol de janeiro",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 418,
+                "brandImage": null,
+                "brandName": "Summer fridays",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 419,
+                "brandImage": null,
+                "brandName": "Sunday riley",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 420,
+                "brandImage": null,
+                "brandName": "Tarte",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 421,
+                "brandImage": null,
+                "brandName": "Tatcha",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 422,
+                "brandImage": null,
+                "brandName": "The inkey list",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 423,
+                "brandImage": null,
+                "brandName": "The ordinary",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 425,
+                "brandImage": null,
+                "brandName": "Too faced",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 426,
+                "brandImage": null,
+                "brandName": "Urban decay",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 428,
+                "brandImage": null,
+                "brandName": "Vegamour",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 429,
+                "brandImage": null,
+                "brandName": "Velour",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 431,
+                "brandImage": null,
+                "brandName": "Viktor & rolf",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 432,
+                "brandImage": null,
+                "brandName": "Virtue",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 433,
+                "brandImage": null,
+                "brandName": "Voluspa",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 434,
+                "brandImage": null,
+                "brandName": "Wishful",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 435,
+                "brandImage": null,
+                "brandName": "Yves saint laurent",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 436,
+                "brandImage": "",
+                "brandName": "Abercrombie & fitch",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 437,
+                "brandImage": "",
+                "brandName": "Louis vuitton",
+                "active": true,
+                "brandLikes": 0
+            },
+            {
+                "brandId": 438,
+                "brandImage": "",
+                "brandName": "Zara",
+                "active": true,
+                "brandLikes": 0
+            }
+        ],
+        "setting": [
+            {
+                "id": 1,
+                "appVersion": "v1.0",
+                "autoApprove": true,
+                "minimumPrice": 50,
+                "shopofWeek": 1,
+                "catofweek": 1,
+                "homeBanner": "https://api.wardrobesetc.com/setting/home.webp",
+                "newBanner": "https://api.wardrobesetc.com/setting/new.webp",
+                "preloverBanner": "https://api.wardrobesetc.com/setting/preloved.webp",
+                "mobileBanner": "https://api.wardrobesetc.com/setting/mobile.webp",
+                "newThumbnail": "https://api.wardrobesetc.com/setting/new_thumb.jpg",
+                "prelovedThumbnail": "https://api.wardrobesetc.com/setting/preloved_thumb.jpg",
+                "adBanner": "https://api.wardrobesetc.com/setting/ad.webp",
+                "comission": 0
+            }
+        ],
+        "color": [
+            {
+                "id": 1,
+                "color1": "Black"
+            },
+            {
+                "id": 2,
+                "color1": "Blue"
+            },
+            {
+                "id": 3,
+                "color1": "Red"
+            },
+            {
+                "id": 4,
+                "color1": "Green"
+            },
+            {
+                "id": 5,
+                "color1": "Purple"
+            },
+            {
+                "id": 6,
+                "color1": "Yellow"
+            },
+            {
+                "id": 7,
+                "color1": "Turquoise"
+            },
+            {
+                "id": 8,
+                "color1": "Grey"
+            },
+            {
+                "id": 9,
+                "color1": "Orange"
+            },
+            {
+                "id": 10,
+                "color1": "Navy"
+            },
+            {
+                "id": 11,
+                "color1": "White"
+            },
+            {
+                "id": 12,
+                "color1": "Brown"
+            },
+            {
+                "id": 13,
+                "color1": "Tan"
+            },
+            {
+                "id": 14,
+                "color1": "Cream"
+            },
+            {
+                "id": 15,
+                "color1": "Khakhi"
+            },
+            {
+                "id": 16,
+                "color1": "Burgundy"
+            },
+            {
+                "id": 17,
+                "color1": "Pink"
+            },
+            {
+                "id": 18,
+                "color1": "Silver"
+            },
+            {
+                "id": 19,
+                "color1": "Gold"
+            }
+        ],
+        "condition": [
+            {
+                "id": 1,
+                "condition1": "New with tags",
+                "description": "in its original packing and/or with tags"
+            },
+            {
+                "id": 2,
+                "condition1": "New",
+                "description": "new with no tags and/or barely used with 0 flaws"
+            },
+            {
+                "id": 3,
+                "condition1": "Like New",
+                "description": "lightly used with minor flaws"
+            },
+            {
+                "id": 4,
+                "condition1": "Lightly worn",
+                "description": "fully preloved, with noticable flaws, to be included in description"
+            }
+        ],
+        "sizes": [
+            {
+                "id": 1,
+                "size1": "XXS"
+            },
+            {
+                "id": 2,
+                "size1": "XS"
+            },
+            {
+                "id": 3,
+                "size1": "S"
+            },
+            {
+                "id": 4,
+                "size1": "M"
+            },
+            {
+                "id": 5,
+                "size1": "L"
+            },
+            {
+                "id": 6,
+                "size1": "XL"
+            },
+            {
+                "id": 7,
+                "size1": "XXL"
+            },
+            {
+                "id": 8,
+                "size1": "XXXL"
+            },
+            {
+                "id": 9,
+                "size1": "4"
+            },
+            {
+                "id": 10,
+                "size1": "4.5"
+            },
+            {
+                "id": 11,
+                "size1": "5"
+            },
+            {
+                "id": 12,
+                "size1": "5.5"
+            },
+            {
+                "id": 13,
+                "size1": "6"
+            },
+            {
+                "id": 14,
+                "size1": "6.5"
+            },
+            {
+                "id": 15,
+                "size1": "7"
+            },
+            {
+                "id": 16,
+                "size1": "7.5"
+            },
+            {
+                "id": 17,
+                "size1": "8"
+            },
+            {
+                "id": 18,
+                "size1": "8.5"
+            },
+            {
+                "id": 19,
+                "size1": "9"
+            },
+            {
+                "id": 20,
+                "size1": "9.5"
+            },
+            {
+                "id": 21,
+                "size1": "10"
+            },
+            {
+                "id": 22,
+                "size1": "10.5"
+            },
+            {
+                "id": 23,
+                "size1": "11"
+            },
+            {
+                "id": 24,
+                "size1": "11.5"
+            },
+            {
+                "id": 25,
+                "size1": "12"
+            },
+            {
+                "id": 26,
+                "size1": "12.5"
+            },
+            {
+                "id": 27,
+                "size1": "13"
+            },
+            {
+                "id": 28,
+                "size1": "13.5"
+            },
+            {
+                "id": 29,
+                "size1": "14"
+            },
+            {
+                "id": 30,
+                "size1": "14.5"
+            },
+            {
+                "id": 31,
+                "size1": "15"
+            },
+            {
+                "id": 32,
+                "size1": "15.5"
+            },
+            {
+                "id": 33,
+                "size1": "16"
+            },
+            {
+                "id": 34,
+                "size1": "16.5"
+            },
+            {
+                "id": 35,
+                "size1": "17"
+            },
+            {
+                "id": 36,
+                "size1": "17.5"
+            },
+            {
+                "id": 37,
+                "size1": "18"
+            },
+            {
+                "id": 38,
+                "size1": "18.5"
+            },
+            {
+                "id": 39,
+                "size1": "19"
+            },
+            {
+                "id": 40,
+                "size1": "19.5"
+            },
+            {
+                "id": 41,
+                "size1": "20"
+            },
+            {
+                "id": 42,
+                "size1": "20.5"
+            },
+            {
+                "id": 43,
+                "size1": "21"
+            },
+            {
+                "id": 44,
+                "size1": "21.5"
+            },
+            {
+                "id": 45,
+                "size1": "22"
+            },
+            {
+                "id": 46,
+                "size1": "22.5"
+            },
+            {
+                "id": 47,
+                "size1": "23"
+            },
+            {
+                "id": 48,
+                "size1": "23.5"
+            },
+            {
+                "id": 49,
+                "size1": "24"
+            },
+            {
+                "id": 50,
+                "size1": "24.5"
+            },
+            {
+                "id": 51,
+                "size1": "25"
+            },
+            {
+                "id": 52,
+                "size1": "25.5"
+            },
+            {
+                "id": 53,
+                "size1": "26"
+            },
+            {
+                "id": 54,
+                "size1": "26.5"
+            },
+            {
+                "id": 55,
+                "size1": "27"
+            },
+            {
+                "id": 56,
+                "size1": "27.5"
+            },
+            {
+                "id": 57,
+                "size1": "28"
+            },
+            {
+                "id": 58,
+                "size1": "28.5"
+            },
+            {
+                "id": 59,
+                "size1": "29"
+            },
+            {
+                "id": 60,
+                "size1": "29.5"
+            },
+            {
+                "id": 61,
+                "size1": "30"
+            },
+            {
+                "id": 62,
+                "size1": "30.5"
+            },
+            {
+                "id": 63,
+                "size1": "31"
+            },
+            {
+                "id": 64,
+                "size1": "31.5"
+            },
+            {
+                "id": 65,
+                "size1": "32"
+            },
+            {
+                "id": 66,
+                "size1": "32.5"
+            },
+            {
+                "id": 67,
+                "size1": "33"
+            },
+            {
+                "id": 68,
+                "size1": "33.5"
+            },
+            {
+                "id": 69,
+                "size1": "34"
+            },
+            {
+                "id": 70,
+                "size1": "34.5"
+            },
+            {
+                "id": 71,
+                "size1": "35"
+            },
+            {
+                "id": 72,
+                "size1": "35.5"
+            },
+            {
+                "id": 73,
+                "size1": "36"
+            },
+            {
+                "id": 74,
+                "size1": "36.5"
+            },
+            {
+                "id": 75,
+                "size1": "37"
+            },
+            {
+                "id": 76,
+                "size1": "37.5"
+            },
+            {
+                "id": 77,
+                "size1": "38"
+            },
+            {
+                "id": 78,
+                "size1": "38.5"
+            },
+            {
+                "id": 79,
+                "size1": "39"
+            },
+            {
+                "id": 80,
+                "size1": "39.5"
+            },
+            {
+                "id": 81,
+                "size1": "40"
+            },
+            {
+                "id": 82,
+                "size1": "40.5"
+            },
+            {
+                "id": 83,
+                "size1": "41"
+            },
+            {
+                "id": 84,
+                "size1": "41.5"
+            },
+            {
+                "id": 85,
+                "size1": "42"
+            },
+            {
+                "id": 86,
+                "size1": "42.5"
+            },
+            {
+                "id": 87,
+                "size1": "43"
+            },
+            {
+                "id": 88,
+                "size1": "43.5"
+            },
+            {
+                "id": 89,
+                "size1": "44"
+            },
+            {
+                "id": 90,
+                "size1": "44.5"
+            },
+            {
+                "id": 91,
+                "size1": "45"
+            },
+            {
+                "id": 92,
+                "size1": "45.5"
+            },
+            {
+                "id": 93,
+                "size1": "46"
+            },
+            {
+                "id": 94,
+                "size1": "47"
+            },
+            {
+                "id": 95,
+                "size1": "47.5"
+            },
+            {
+                "id": 96,
+                "size1": "48"
+            },
+            {
+                "id": 97,
+                "size1": "48.5"
+            },
+            {
+                "id": 98,
+                "size1": "49"
+            },
+            {
+                "id": 99,
+                "size1": "49.5"
+            },
+            {
+                "id": 100,
+                "size1": "50"
+            },
+            {
+                "id": 101,
+                "size1": "50.5"
+            },
+            {
+                "id": 102,
+                "size1": "51"
+            },
+            {
+                "id": 103,
+                "size1": "51.5"
+            },
+            {
+                "id": 104,
+                "size1": "52"
+            },
+            {
+                "id": 105,
+                "size1": "52.5"
+            },
+            {
+                "id": 106,
+                "size1": "53"
+            },
+            {
+                "id": 107,
+                "size1": "53.5"
+            },
+            {
+                "id": 108,
+                "size1": "54"
+            },
+            {
+                "id": 109,
+                "size1": "54.5"
+            },
+            {
+                "id": 110,
+                "size1": "55"
+            },
+            {
+                "id": 111,
+                "size1": "55.5"
+            },
+            {
+                "id": 112,
+                "size1": "56"
+            },
+            {
+                "id": 113,
+                "size1": "56.5"
+            },
+            {
+                "id": 114,
+                "size1": "57"
+            },
+            {
+                "id": 115,
+                "size1": "57.5"
+            },
+            {
+                "id": 116,
+                "size1": "58"
+            },
+            {
+                "id": 117,
+                "size1": "58.5"
+            },
+            {
+                "id": 118,
+                "size1": "59"
+            },
+            {
+                "id": 119,
+                "size1": "59.5"
+            },
+            {
+                "id": 120,
+                "size1": "60"
+            }
+        ],
+        "emirates": [
+            {
+                "id": 1,
+                "cities": "Abu Dhabi"
+            },
+            {
+                "id": 2,
+                "cities": "Dubai"
+            },
+            {
+                "id": 3,
+                "cities": "Sharjah"
+            },
+            {
+                "id": 4,
+                "cities": "Ajman"
+            },
+            {
+                "id": 5,
+                "cities": "Umm Al Quwain"
+            },
+            {
+                "id": 6,
+                "cities": "Ras Al Khaimah"
+            },
+            {
+                "id": 7,
+                "cities": "Fujairah"
+            }
+        ]
+    }
+}
