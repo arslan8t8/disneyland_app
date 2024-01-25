@@ -63,8 +63,8 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                       child: Center(
                         child: Text(
                           'widget.item!.item!',
-                          //softWrap: true,
-                          // maxLines: 2,
+                          softWrap: true,
+                          maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 12.sp,

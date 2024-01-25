@@ -1,5 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:disneyland_app/app_screens/admin_screens/manage_admin_screens/all_admins.dart';
+import 'package:disneyland_app/app_screens/admin_screens/manage_characters_screens/all_characters.dart';
+import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/all_users.dart';
+import 'package:disneyland_app/app_screens/admin_screens/report_screens/report_stats.dart';
+import 'package:disneyland_app/app_screens/admin_screens/setting_screens/setting.dart';
 import 'package:disneyland_app/services/color_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +34,13 @@ class _MainPageState extends State<BottomBarWidget> {
 
   @override
   void initState() {
-    _pages = [];
+    _pages = [
+      AllCharacters(),
+      AllUsers(),
+      AllAdmins(),
+      ReportStats(),
+      SettingScreen(),
+    ];
 
     _selectedIndex = widget.page ?? 0;
     super.initState();
@@ -66,14 +77,19 @@ class _MainPageState extends State<BottomBarWidget> {
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w400,
                 ),
-                selectedItemColor: colorBlue,
-                unselectedItemColor: Color(0xFF8EA0EB),
+                selectedItemColor: color4,
+                unselectedItemColor: primaryColor,
                 currentIndex: _selectedIndex,
                 onTap: _navigateBottomBar,
                 type: BottomNavigationBarType.fixed,
                 items: [
-                  BottomNavigationBarItem(icon: Icon(Icons.home, size: 25), label: 'Home'),
-                  BottomNavigationBarItem(icon: Icon(Icons.settings, size: 25), label: 'Settings'),
+                  BottomNavigationBarItem(
+                      icon: Icon(CupertinoIcons.wand_stars_inverse, size: 25), label: 'Characters'),
+                  BottomNavigationBarItem(icon: Icon(Icons.groups_2, size: 25), label: 'Users'),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.admin_panel_settings_sharp, size: 25), label: 'Admins'),
+                  BottomNavigationBarItem(icon: Icon(Icons.auto_graph_sharp, size: 25), label: 'Stats'),
+                  BottomNavigationBarItem(icon: Icon(Icons.settings, size: 25), label: 'Setting'),
                 ],
               ),
             ),

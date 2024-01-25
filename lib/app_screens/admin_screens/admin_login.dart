@@ -1,4 +1,5 @@
 import 'package:disneyland_app/services/color_service.dart';
+import 'package:disneyland_app/widgets/bottom_bar.dart';
 import 'package:disneyland_app/widgets/buttons.dart';
 import 'package:disneyland_app/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,8 @@ class _AdminLoginState extends State<AdminLogin> {
                 text: 'Login',
                 onPressed: () {
                   //TODO apply backend logic here
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => const VotingScreen()));
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (context) => BottomBarWidget()));
                 },
               ),
             ),

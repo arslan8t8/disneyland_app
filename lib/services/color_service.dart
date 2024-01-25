@@ -35,3 +35,4 @@ const colorText2 = Color(0xFF9E9E9E);
 const colorGray = Color(0xFFB3B3B3);
 const colorGray2 = Color(0xFFE7E7E7);
 const colorBlue = Color(0xFF4560CB);
+const colorRed = Color.fromARGB(255, 240, 3, 3);

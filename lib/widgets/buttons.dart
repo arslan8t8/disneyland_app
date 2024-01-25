@@ -5,14 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
+  Color? color;
 
   final VoidCallback onPressed;
 
-  const PrimaryButton({
-    Key? key,
-    required this.text,
-    required this.onPressed,
-  }) : super(key: key);
+  PrimaryButton({Key? key, required this.text, required this.onPressed, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +28,7 @@ class PrimaryButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          backgroundColor: color1,
+          backgroundColor: color ?? color1,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.r),
           ),
