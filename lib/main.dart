@@ -1,5 +1,5 @@
 import 'package:disneyland_app/services/color_service.dart';
-import 'package:disneyland_app/splash.dart';
+import 'package:disneyland_app/app_screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

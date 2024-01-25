@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:disneyland_app/app_screens/choose.dart';
 import 'package:disneyland_app/services/color_service.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 4200), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const UserChoice()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const UserChoice()));
     });
     super.initState();
   }

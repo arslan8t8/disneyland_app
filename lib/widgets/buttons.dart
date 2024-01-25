@@ -31,7 +31,7 @@ class PrimaryButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          backgroundColor: primaryColor,
+          backgroundColor: color1,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.r),
           ),
@@ -229,7 +229,11 @@ class GoogleButton extends StatelessWidget {
 
 class EmailButton extends StatelessWidget {
   final Function onTap;
-  const EmailButton({super.key, required this.onTap});
+  final String text;
+  final Color color;
+  final Icon icon;
+  const EmailButton(
+      {super.key, required this.onTap, required this.text, required this.color, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -242,7 +246,7 @@ class EmailButton extends StatelessWidget {
         height: 50.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
-          color: color1,
+          color: color,
           boxShadow: [
             BoxShadow(
               offset: Offset(0, 4),
@@ -255,10 +259,10 @@ class EmailButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(width: 80.w),
-            Icon(Icons.email, color: colorWhite, size: 30.sp),
+            icon,
             SizedBox(width: 10.w),
             Text(
-              'Continue with Email',
+              text,
               style: TextStyle(
                 color: colorWhite,
                 fontWeight: FontWeight.w600,
