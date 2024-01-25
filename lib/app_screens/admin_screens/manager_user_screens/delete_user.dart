@@ -22,7 +22,7 @@ class _DeleteUserState extends State<DeleteUser> {
           SizedBox(
             height: 100.h,
           ),
-          DeleteUserWidget(),
+          const DeleteUserWidget(),
           SizedBox(
             height: 20.h,
           ),
