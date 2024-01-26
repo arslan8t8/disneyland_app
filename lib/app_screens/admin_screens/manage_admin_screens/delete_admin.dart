@@ -1,17 +1,17 @@
 import 'package:disneyland_app/services/color_service.dart';
-import 'package:disneyland_app/widgets/admin_widgets/delete_user_widget.dart';
+import 'package:disneyland_app/widgets/admin_widgets/delete_admin_widget.dart';
 import 'package:disneyland_app/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DeleteUser extends StatefulWidget {
-  const DeleteUser({super.key});
+class DeleteAdmin extends StatefulWidget {
+  const DeleteAdmin({super.key});
 
   @override
-  State<DeleteUser> createState() => _DeleteUserState();
+  State<DeleteAdmin> createState() => _DeleteAdminState();
 }
 
-class _DeleteUserState extends State<DeleteUser> {
+class _DeleteAdminState extends State<DeleteAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +22,12 @@ class _DeleteUserState extends State<DeleteUser> {
           SizedBox(
             height: 100.h,
           ),
-          const DeleteUserWidget(),
+          const DeleteAdminWidget(),
           SizedBox(
             height: 20.h,
           ),
           Text(
-            'Are you sure to delete this User?',
+            'Are you sure to delete this Admin?',
             style: TextStyle(color: colorWhite, fontSize: 16.sp, fontWeight: FontWeight.w500),
           ),
           SizedBox(
