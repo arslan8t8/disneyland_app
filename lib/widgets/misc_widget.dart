@@ -16,10 +16,10 @@ Future<bool?> toastWidget({required String message}) async {
 Widget loadingWidget() {
   return const Center(
     child: SizedBox(
-      width: 80,
-      height: 80,
+      width: 30,
+      height: 30,
       child: CircularProgressIndicator(
-        color: primaryColor,
+        color: color4,
       ),
     ),
   );
