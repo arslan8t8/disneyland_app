@@ -1,7 +1,11 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, use_build_context_synchronously
+
+import 'dart:convert';
 
 import 'package:disneyland_app/app_screens/admin_screens/manage_admin_screens/add_admin.dart';
+import 'package:disneyland_app/models/admin_model/admin_model.dart';
 import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/state_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/widgets/admin_widgets/admin_view_widget.dart';
@@ -9,6 +13,7 @@ import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:disneyland_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class AllAdmins extends StatefulWidget {
   const AllAdmins({super.key});
@@ -28,6 +33,7 @@ class _AllAdminsState extends State<AllAdmins> {
 
   @override
   Widget build(BuildContext context) {
+    var admins = context.watch<AppStateService>().getAllAdmins();
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -83,22 +89,23 @@ class _AllAdminsState extends State<AllAdmins> {
                           ? loadingWidget()
                           : Expanded(
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
-                                child: SingleChildScrollView(
-                                    child: Column(
-                                  children: [
-                                    ListView.builder(
-                                      shrinkWrap: true,
-                                      primary: false,
-                                      itemCount: 10,
-                                      itemBuilder: (context, index) {
-                                        return const AdminViewWidget();
-                                      },
-                                    ),
-                                    SizedBox(height: 90.h)
-                                  ],
-                                )),
-                              ),
+                                  padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+                                  child: SingleChildScrollView(
+                                      child: Column(
+                                    children: [
+                                      ListView.builder(
+                                        shrinkWrap: true,
+                                        primary: false,
+                                        itemCount: admins.length,
+                                        itemBuilder: (context, index) {
+                                          return AdminViewWidget(
+                                            admin: admins[index],
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 90.h)
+                                    ],
+                                  ))),
                             ),
                     ],
                   ),
@@ -135,8 +142,10 @@ class _AllAdminsState extends State<AllAdmins> {
           isloading = false;
         });
         printLongString(response.body.toString());
-        //show toast message
-        toastWidget(message: 'Admins fetched successfully');
+
+        AdminModel admins = AdminModel.fromJson(jsonDecode(response.body));
+        //setting state for admins
+        Provider.of<AppStateService>(context, listen: false).setAllAdmins(admins.data);
       } else {
         setState(() {
           isloading = false;

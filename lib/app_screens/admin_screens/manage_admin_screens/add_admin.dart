@@ -2,8 +2,10 @@
 
 import 'dart:convert';
 import 'dart:io';
+import 'package:disneyland_app/models/admin_model/admin_model.dart';
 import 'package:disneyland_app/models/image_model/image_upload_model.dart';
 import 'package:disneyland_app/models/user_model/user_model.dart';
+import 'package:disneyland_app/services/state_service.dart';
 import 'package:disneyland_app/services/token_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
@@ -16,6 +18,7 @@ import 'package:disneyland_app/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
 class AddAdmin extends StatefulWidget {
   const AddAdmin({super.key});
@@ -243,9 +246,6 @@ class _AddAdminState extends State<AddAdmin> {
       //copied code
       http.StreamedResponse res = await uploadProcess();
       if (res.statusCode == 200) {
-        setState(() {
-          isloading = false;
-        });
         final uploadresponse = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
         printLongString(uploadresponse.toString());
 
@@ -264,9 +264,6 @@ class _AddAdminState extends State<AddAdmin> {
           //calling tha upload image api again after token updating
           http.StreamedResponse uploadagain = await uploadProcess();
           if (uploadagain.statusCode == 200) {
-            setState(() {
-              isloading = false;
-            });
             final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
             setState(() {
               imageUploadModel = ImageUploadModel.fromJson(responseagain);
@@ -275,9 +272,7 @@ class _AddAdminState extends State<AddAdmin> {
           } else {
             final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
             printLongString(responseagain.toString());
-            setState(() {
-              isloading = false;
-            });
+
             toastWidget(message: 'Error uploading image');
             return;
           }
@@ -314,17 +309,17 @@ class _AddAdminState extends State<AddAdmin> {
 
         var response = await ApiService().postRequest(link, adminSignupModel.toJson());
         if (response.statusCode == 200) {
-          setState(() {
-            isloading = false;
-          });
+          AdminData newAdmin = AdminData.fromJson(jsonDecode(response.body)['data']);
+
+          //adding new admin in provider state
+          Provider.of<AppStateService>(context, listen: false).addAdmin(newAdmin);
+
           //show toast message
           toastWidget(message: 'Admin added successfully');
           Navigator.pop(context);
         } else {
           printLongString(response.body.toString());
-          setState(() {
-            isloading = false;
-          });
+
           //gettign message from response
           var message = jsonDecode(response.body)['message'];
           //show toast message

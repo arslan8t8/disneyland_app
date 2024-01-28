@@ -458,3 +458,357 @@ abstract class _AdminData implements AdminData {
   _$$AdminDataImplCopyWith<_$AdminDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+AdminLoginModel _$AdminLoginModelFromJson(Map<String, dynamic> json) {
+  return _AdminLoginModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AdminLoginModel {
+  AdminData get admin => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AdminLoginModelCopyWith<AdminLoginModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AdminLoginModelCopyWith<$Res> {
+  factory $AdminLoginModelCopyWith(
+          AdminLoginModel value, $Res Function(AdminLoginModel) then) =
+      _$AdminLoginModelCopyWithImpl<$Res, AdminLoginModel>;
+  @useResult
+  $Res call({AdminData admin, String token});
+
+  $AdminDataCopyWith<$Res> get admin;
+}
+
+/// @nodoc
+class _$AdminLoginModelCopyWithImpl<$Res, $Val extends AdminLoginModel>
+    implements $AdminLoginModelCopyWith<$Res> {
+  _$AdminLoginModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? admin = null,
+    Object? token = null,
+  }) {
+    return _then(_value.copyWith(
+      admin: null == admin
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
+              as AdminData,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AdminDataCopyWith<$Res> get admin {
+    return $AdminDataCopyWith<$Res>(_value.admin, (value) {
+      return _then(_value.copyWith(admin: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AdminLoginModelImplCopyWith<$Res>
+    implements $AdminLoginModelCopyWith<$Res> {
+  factory _$$AdminLoginModelImplCopyWith(_$AdminLoginModelImpl value,
+          $Res Function(_$AdminLoginModelImpl) then) =
+      __$$AdminLoginModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({AdminData admin, String token});
+
+  @override
+  $AdminDataCopyWith<$Res> get admin;
+}
+
+/// @nodoc
+class __$$AdminLoginModelImplCopyWithImpl<$Res>
+    extends _$AdminLoginModelCopyWithImpl<$Res, _$AdminLoginModelImpl>
+    implements _$$AdminLoginModelImplCopyWith<$Res> {
+  __$$AdminLoginModelImplCopyWithImpl(
+      _$AdminLoginModelImpl _value, $Res Function(_$AdminLoginModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? admin = null,
+    Object? token = null,
+  }) {
+    return _then(_$AdminLoginModelImpl(
+      admin: null == admin
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
+              as AdminData,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AdminLoginModelImpl implements _AdminLoginModel {
+  _$AdminLoginModelImpl({required this.admin, required this.token});
+
+  factory _$AdminLoginModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AdminLoginModelImplFromJson(json);
+
+  @override
+  final AdminData admin;
+  @override
+  final String token;
+
+  @override
+  String toString() {
+    return 'AdminLoginModel(admin: $admin, token: $token)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AdminLoginModelImpl &&
+            (identical(other.admin, admin) || other.admin == admin) &&
+            (identical(other.token, token) || other.token == token));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, admin, token);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AdminLoginModelImplCopyWith<_$AdminLoginModelImpl> get copyWith =>
+      __$$AdminLoginModelImplCopyWithImpl<_$AdminLoginModelImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AdminLoginModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AdminLoginModel implements AdminLoginModel {
+  factory _AdminLoginModel(
+      {required final AdminData admin,
+      required final String token}) = _$AdminLoginModelImpl;
+
+  factory _AdminLoginModel.fromJson(Map<String, dynamic> json) =
+      _$AdminLoginModelImpl.fromJson;
+
+  @override
+  AdminData get admin;
+  @override
+  String get token;
+  @override
+  @JsonKey(ignore: true)
+  _$$AdminLoginModelImplCopyWith<_$AdminLoginModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CurrentAdminModel _$CurrentAdminModelFromJson(Map<String, dynamic> json) {
+  return _CurrentAdminModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CurrentAdminModel {
+  int get status => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  AdminLoginModel get data => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CurrentAdminModelCopyWith<CurrentAdminModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CurrentAdminModelCopyWith<$Res> {
+  factory $CurrentAdminModelCopyWith(
+          CurrentAdminModel value, $Res Function(CurrentAdminModel) then) =
+      _$CurrentAdminModelCopyWithImpl<$Res, CurrentAdminModel>;
+  @useResult
+  $Res call({int status, String message, AdminLoginModel data});
+
+  $AdminLoginModelCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class _$CurrentAdminModelCopyWithImpl<$Res, $Val extends CurrentAdminModel>
+    implements $CurrentAdminModelCopyWith<$Res> {
+  _$CurrentAdminModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? message = null,
+    Object? data = null,
+  }) {
+    return _then(_value.copyWith(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as AdminLoginModel,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AdminLoginModelCopyWith<$Res> get data {
+    return $AdminLoginModelCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$CurrentAdminModelImplCopyWith<$Res>
+    implements $CurrentAdminModelCopyWith<$Res> {
+  factory _$$CurrentAdminModelImplCopyWith(_$CurrentAdminModelImpl value,
+          $Res Function(_$CurrentAdminModelImpl) then) =
+      __$$CurrentAdminModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int status, String message, AdminLoginModel data});
+
+  @override
+  $AdminLoginModelCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$CurrentAdminModelImplCopyWithImpl<$Res>
+    extends _$CurrentAdminModelCopyWithImpl<$Res, _$CurrentAdminModelImpl>
+    implements _$$CurrentAdminModelImplCopyWith<$Res> {
+  __$$CurrentAdminModelImplCopyWithImpl(_$CurrentAdminModelImpl _value,
+      $Res Function(_$CurrentAdminModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? message = null,
+    Object? data = null,
+  }) {
+    return _then(_$CurrentAdminModelImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as AdminLoginModel,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CurrentAdminModelImpl implements _CurrentAdminModel {
+  _$CurrentAdminModelImpl(
+      {required this.status, required this.message, required this.data});
+
+  factory _$CurrentAdminModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CurrentAdminModelImplFromJson(json);
+
+  @override
+  final int status;
+  @override
+  final String message;
+  @override
+  final AdminLoginModel data;
+
+  @override
+  String toString() {
+    return 'CurrentAdminModel(status: $status, message: $message, data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CurrentAdminModelImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, status, message, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CurrentAdminModelImplCopyWith<_$CurrentAdminModelImpl> get copyWith =>
+      __$$CurrentAdminModelImplCopyWithImpl<_$CurrentAdminModelImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CurrentAdminModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CurrentAdminModel implements CurrentAdminModel {
+  factory _CurrentAdminModel(
+      {required final int status,
+      required final String message,
+      required final AdminLoginModel data}) = _$CurrentAdminModelImpl;
+
+  factory _CurrentAdminModel.fromJson(Map<String, dynamic> json) =
+      _$CurrentAdminModelImpl.fromJson;
+
+  @override
+  int get status;
+  @override
+  String get message;
+  @override
+  AdminLoginModel get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$CurrentAdminModelImplCopyWith<_$CurrentAdminModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

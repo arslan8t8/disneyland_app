@@ -43,3 +43,33 @@ Map<String, dynamic> _$$AdminDataImplToJson(_$AdminDataImpl instance) =>
       'isEmailVerified': instance.isEmailVerified,
       'signUpDate': instance.signUpDate,
     };
+
+_$AdminLoginModelImpl _$$AdminLoginModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AdminLoginModelImpl(
+      admin: AdminData.fromJson(json['admin'] as Map<String, dynamic>),
+      token: json['token'] as String,
+    );
+
+Map<String, dynamic> _$$AdminLoginModelImplToJson(
+        _$AdminLoginModelImpl instance) =>
+    <String, dynamic>{
+      'admin': instance.admin,
+      'token': instance.token,
+    };
+
+_$CurrentAdminModelImpl _$$CurrentAdminModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CurrentAdminModelImpl(
+      status: json['status'] as int,
+      message: json['message'] as String,
+      data: AdminLoginModel.fromJson(json['data'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$CurrentAdminModelImplToJson(
+        _$CurrentAdminModelImpl instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+      'data': instance.data,
+    };

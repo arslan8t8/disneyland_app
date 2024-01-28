@@ -1,18 +1,22 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:disneyland_app/models/admin_model/admin_model.dart';
+import 'package:disneyland_app/services/state_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
-class DeleteAdminWidget extends StatefulWidget {
-  const DeleteAdminWidget({super.key});
+class DeleteAdminWidget extends StatelessWidget {
+  final AdminData admin;
+  DeleteAdminWidget({super.key, required this.admin});
 
-  @override
-  State<DeleteAdminWidget> createState() => _DeleteAdminWidgetState();
-}
-
-class _DeleteAdminWidgetState extends State<DeleteAdminWidget> {
   bool isloading = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,12 +51,11 @@ class _DeleteAdminWidgetState extends State<DeleteAdminWidget> {
                         children: [
                           CircleAvatar(
                             radius: 25.r,
-                            backgroundImage: NetworkImage(
-                                'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'),
+                            backgroundImage: NetworkImage(admin.profileImage),
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            'Admin Name',
+                            admin.adminName,
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 16.sp, fontWeight: FontWeight.bold),
@@ -70,13 +73,16 @@ class _DeleteAdminWidgetState extends State<DeleteAdminWidget> {
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            'demo@demo.com',
+                            admin.email,
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 15.sp, fontWeight: FontWeight.w500),
                           ),
                           SizedBox(width: 30.w),
                           InkWell(
+                            onTap: () {
+                              Clipboard.setData(ClipboardData(text: admin.email));
+                            },
                             child: const Icon(
                               Icons.copy,
                               color: primaryColor,
@@ -95,13 +101,16 @@ class _DeleteAdminWidgetState extends State<DeleteAdminWidget> {
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            '0123456789',
+                            admin.phone,
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 15.sp, fontWeight: FontWeight.w500),
                           ),
                           SizedBox(width: 30.w),
                           InkWell(
+                            onTap: () {
+                              Clipboard.setData(ClipboardData(text: admin.phone));
+                            },
                             child: const Icon(
                               Icons.copy,
                               color: primaryColor,
@@ -120,7 +129,7 @@ class _DeleteAdminWidgetState extends State<DeleteAdminWidget> {
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            '25 Jan 2023',
+                            DateFormat('dd-MM-yyyy').format(DateTime.parse(admin.signUpDate)),
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 15.sp, fontWeight: FontWeight.w500),
