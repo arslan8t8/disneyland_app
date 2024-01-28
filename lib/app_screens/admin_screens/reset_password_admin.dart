@@ -12,15 +12,15 @@ import 'package:disneyland_app/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ResetPassword extends StatefulWidget {
+class ResetPasswordAdmin extends StatefulWidget {
   final String email;
-  const ResetPassword({super.key, required this.email});
+  const ResetPasswordAdmin({super.key, required this.email});
 
   @override
-  State<ResetPassword> createState() => _ResetPasswordState();
+  State<ResetPasswordAdmin> createState() => _ResetPasswordAdminState();
 }
 
-class _ResetPasswordState extends State<ResetPassword> {
+class _ResetPasswordAdminState extends State<ResetPasswordAdmin> {
   //declare controllers
   TextEditingController codeController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
@@ -155,7 +155,7 @@ class _ResetPasswordState extends State<ResetPassword> {
         isloading = true;
       });
 
-      String link = '$baseUrl$authEndpoint/reset-password';
+      String link = '$baseUrl$adminEndpoint/reset-password-admin';
 
       var body = {
         'email': widget.email,

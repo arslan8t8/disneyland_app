@@ -1,19 +1,21 @@
-import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/delete_user.dart';
-import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/update_user.dart';
+// ignore_for_file: must_be_immutable
+
+import 'package:disneyland_app/app_screens/admin_screens/manage_user_screens/delete_user.dart';
+import 'package:disneyland_app/app_screens/admin_screens/manage_user_screens/update_user.dart';
+import 'package:disneyland_app/models/user_model/user_model.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
-class AdminUserWidget extends StatefulWidget {
-  const AdminUserWidget({super.key});
+class AdminUserWidget extends StatelessWidget {
+  final UserModel user;
+  AdminUserWidget({super.key, required this.user});
 
-  @override
-  State<AdminUserWidget> createState() => _AdminUserWidgetState();
-}
-
-class _AdminUserWidgetState extends State<AdminUserWidget> {
   bool isloading = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,12 +50,11 @@ class _AdminUserWidgetState extends State<AdminUserWidget> {
                         children: [
                           CircleAvatar(
                             radius: 25.r,
-                            backgroundImage: NetworkImage(
-                                'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'),
+                            backgroundImage: NetworkImage(user.profileImage),
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            'User Name',
+                            user.userName,
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 16.sp, fontWeight: FontWeight.bold),
@@ -71,13 +72,17 @@ class _AdminUserWidgetState extends State<AdminUserWidget> {
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            'demo@demo.com',
+                            user.email,
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 15.sp, fontWeight: FontWeight.w500),
                           ),
                           SizedBox(width: 30.w),
                           InkWell(
+                            onTap: () {
+                              Clipboard.setData(ClipboardData(text: user.email));
+                              toastWidget(message: 'Email copied');
+                            },
                             child: const Icon(
                               Icons.copy,
                               color: primaryColor,
@@ -96,13 +101,17 @@ class _AdminUserWidgetState extends State<AdminUserWidget> {
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            '0123456789',
+                            user.phone,
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 15.sp, fontWeight: FontWeight.w500),
                           ),
                           SizedBox(width: 30.w),
                           InkWell(
+                            onTap: () {
+                              Clipboard.setData(ClipboardData(text: user.phone));
+                              toastWidget(message: 'Phone number copied');
+                            },
                             child: const Icon(
                               Icons.copy,
                               color: primaryColor,
@@ -121,13 +130,13 @@ class _AdminUserWidgetState extends State<AdminUserWidget> {
                           ),
                           SizedBox(width: 10.w),
                           Text(
-                            '25 Jan 2023',
+                            DateFormat('dd-MM-yyyy').format(DateTime.parse(user.signUpDate)),
                             softWrap: true,
                             style: TextStyle(
                                 color: colorBlack, fontSize: 15.sp, fontWeight: FontWeight.w500),
                           ),
-                          Spacer(),
-                          Text('30 votes casted',
+                          const Spacer(),
+                          Text('${user.voteCasted} votes casted',
                               softWrap: true,
                               style: TextStyle(
                                   color: colorBlack, fontSize: 15.sp, fontWeight: FontWeight.w500)),
@@ -143,7 +152,12 @@ class _AdminUserWidgetState extends State<AdminUserWidget> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateUser()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UpdateUser(
+                                      user: user,
+                                    )));
                       },
                       child: const Icon(
                         Icons.edit,
@@ -153,7 +167,11 @@ class _AdminUserWidgetState extends State<AdminUserWidget> {
                     InkWell(
                       onTap: () {
                         Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => const DeleteUser()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DeleteUser(
+                                      userId: user.userId,
+                                    )));
                       },
                       child: const Icon(
                         Icons.delete,

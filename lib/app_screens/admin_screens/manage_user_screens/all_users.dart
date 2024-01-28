@@ -1,12 +1,19 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, use_build_context_synchronously
 
-import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/add_user.dart';
+import 'dart:convert';
+
+import 'package:disneyland_app/app_screens/admin_screens/manage_user_screens/add_user.dart';
+import 'package:disneyland_app/models/user_model/user_model.dart';
+import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/state_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
+import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/widgets/admin_widgets/admin_user_widget.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:disneyland_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class AllUsers extends StatefulWidget {
   const AllUsers({super.key});
@@ -17,8 +24,16 @@ class AllUsers extends StatefulWidget {
 
 class _AllUsersState extends State<AllUsers> {
   bool isloading = false;
+
+  @override
+  void initState() {
+    getAllUsers();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var allusers = context.watch<UserStateService>().getAllUsers();
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -79,9 +94,11 @@ class _AllUsersState extends State<AllUsers> {
                               ListView.builder(
                                 shrinkWrap: true,
                                 primary: false,
-                                itemCount: 10,
+                                itemCount: allusers.length,
                                 itemBuilder: (context, index) {
-                                  return const AdminUserWidget();
+                                  return AdminUserWidget(
+                                    user: allusers[index],
+                                  );
                                 },
                               ),
                               SizedBox(height: 90.h)
@@ -106,5 +123,37 @@ class _AllUsersState extends State<AllUsers> {
             ),
           )),
     );
+  }
+
+  //backend code
+
+  Future getAllUsers() async {
+    try {
+      setState(() {
+        isloading = true;
+      });
+
+      String link = '$baseUrl$usersEndpoint/all-users';
+      var response = await ApiService().getRequest(link);
+
+      if (response.statusCode == 200) {
+        printLongString(response.body);
+        AllUsersModel allUsersModel = AllUsersModel.fromJson(jsonDecode(response.body));
+        context.read<UserStateService>().setAllUsers(allUsersModel.data);
+      } else {
+        printLongString(response.body);
+        toastWidget(message: 'Error occured, please try again');
+      }
+    } catch (ex) {
+      printLongString(ex.toString());
+      setState(() {
+        isloading = false;
+      });
+      //show toast message
+      toastWidget(message: 'Error occured, please try again');
+    } finally {
+      isloading = false;
+      setState(() {});
+    }
   }
 }

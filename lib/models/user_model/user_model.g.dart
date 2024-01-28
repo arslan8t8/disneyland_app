@@ -30,15 +30,20 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'voteCasted': instance.voteCasted,
     };
 
-_$TokenImpl _$$TokenImplFromJson(Map<String, dynamic> json) => _$TokenImpl(
-      userList: (json['userList'] as List<dynamic>)
+_$AllUsersModelImpl _$$AllUsersModelImplFromJson(Map<String, dynamic> json) =>
+    _$AllUsersModelImpl(
+      status: json['status'] as int,
+      message: json['message'] as String,
+      data: (json['data'] as List<dynamic>)
           .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$TokenImplToJson(_$TokenImpl instance) =>
+Map<String, dynamic> _$$AllUsersModelImplToJson(_$AllUsersModelImpl instance) =>
     <String, dynamic>{
-      'userList': instance.userList,
+      'status': instance.status,
+      'message': instance.message,
+      'data': instance.data,
     };
 
 _$UserDataImpl _$$UserDataImplFromJson(Map<String, dynamic> json) =>

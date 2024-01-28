@@ -1,18 +1,17 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:disneyland_app/app_screens/admin_screens/manage_characters_screens/delete_character.dart';
 import 'package:disneyland_app/app_screens/admin_screens/manage_characters_screens/update_character.dart';
+import 'package:disneyland_app/models/character_model/character_model.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AdminCharacterWidget extends StatefulWidget {
-  const AdminCharacterWidget({super.key});
+class AdminCharacterWidget extends StatelessWidget {
+  final CharacterModel character;
+  AdminCharacterWidget({super.key, required this.character});
 
-  @override
-  State<AdminCharacterWidget> createState() => _AdminCharacterWidgetState();
-}
-
-class _AdminCharacterWidgetState extends State<AdminCharacterWidget> {
   bool isloading = false;
 
   @override
@@ -40,12 +39,7 @@ class _AdminCharacterWidgetState extends State<AdminCharacterWidget> {
                   height: 190.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                    //add some dummy image url
-
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'),
-                        fit: BoxFit.cover),
+                    image: DecorationImage(image: NetworkImage(character.imageUrl), fit: BoxFit.cover),
                   ),
                   child: Column(
                     children: [
@@ -55,7 +49,7 @@ class _AdminCharacterWidgetState extends State<AdminCharacterWidget> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              '30',
+                              character.totalVotes.toString(),
                               style: TextStyle(
                                   color: colorRed, fontSize: 12.sp, fontWeight: FontWeight.bold),
                             ),
@@ -65,7 +59,6 @@ class _AdminCharacterWidgetState extends State<AdminCharacterWidget> {
                     ],
                   ),
                 ),
-                const Divider(thickness: 1, height: 1, color: colorText),
                 SizedBox(height: 10.h),
                 SizedBox(
                   width: 150.w,
@@ -74,7 +67,7 @@ class _AdminCharacterWidgetState extends State<AdminCharacterWidget> {
                     padding: EdgeInsets.symmetric(horizontal: 2.w),
                     child: Center(
                       child: Text(
-                        'widget.item!.item!',
+                        character.characterName,
                         softWrap: true,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -94,7 +87,11 @@ class _AdminCharacterWidgetState extends State<AdminCharacterWidget> {
                     InkWell(
                       onTap: () {
                         Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => UpdateCharacter()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UpdateCharacter(
+                                      character: character,
+                                    )));
                       },
                       child: const Icon(
                         Icons.edit,
@@ -104,7 +101,11 @@ class _AdminCharacterWidgetState extends State<AdminCharacterWidget> {
                     InkWell(
                       onTap: () {
                         Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => DeleteCharacter()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DeleteCharacter(
+                                      id: character.characterId,
+                                    )));
                       },
                       child: const Icon(
                         Icons.delete,

@@ -1,23 +1,13 @@
-//ward robe API base url
+//API base url
 
 const String baseUrl = 'https://disneyland.wardrobesetc.com/api/v1';
 
-//wardrobe API endpoints
-const String auth = '/Auth';
-const String admin = '/Admin';
-// const String users = '/';
-// const String favourite = '/Favourite';
-// const String brands = '/Brands';
-// const String shop = '/shop';
-// const String info = '/info';
-// const String notification = '/Notification';
-// const String promo = '/promo';
-// const String items_path = '/Items';
-// const String cart = '/cart';
-// const String orders = '/orders';
-// const String review = '/review';
-// const String chat = '/chat';
-// const String dashboard = '/Dashborad';
+//API endpoints
+const String authEndpoint = '/Auth';
+const String adminEndpoint = '/Admin';
+const String usersEndpoint = '/User';
+const String disneylandEndPoint = '/Disneyland';
+const String voteEndpoint = '/Vote';
 
 /// Print Long String
 void printLongString(String text) {

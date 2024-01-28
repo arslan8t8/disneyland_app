@@ -10,14 +10,14 @@ import 'package:disneyland_app/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({super.key});
+class ForgotPasswordAdmin extends StatefulWidget {
+  const ForgotPasswordAdmin({super.key});
 
   @override
-  State<ForgotPassword> createState() => _ForgotPasswordState();
+  State<ForgotPasswordAdmin> createState() => _ForgotPasswordAdminState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _ForgotPasswordAdminState extends State<ForgotPasswordAdmin> {
   TextEditingController emailController = TextEditingController();
   bool isloading = false;
   @override
@@ -74,7 +74,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         isloading = true;
       });
 
-      String link = '$baseUrl$authEndpoint/forgot-password?email=${emailController.text}';
+      String link = '$baseUrl$adminEndpoint/forgot-password-admin?email=${emailController.text}';
 
       var response = await ApiService().postcall(link);
 

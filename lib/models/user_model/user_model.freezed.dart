@@ -299,31 +299,35 @@ abstract class _UserModel implements UserModel {
       throw _privateConstructorUsedError;
 }
 
-Token _$TokenFromJson(Map<String, dynamic> json) {
-  return _Token.fromJson(json);
+AllUsersModel _$AllUsersModelFromJson(Map<String, dynamic> json) {
+  return _AllUsersModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Token {
-  List<UserModel> get userList => throw _privateConstructorUsedError;
+mixin _$AllUsersModel {
+  int get status => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  List<UserModel> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TokenCopyWith<Token> get copyWith => throw _privateConstructorUsedError;
+  $AllUsersModelCopyWith<AllUsersModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TokenCopyWith<$Res> {
-  factory $TokenCopyWith(Token value, $Res Function(Token) then) =
-      _$TokenCopyWithImpl<$Res, Token>;
+abstract class $AllUsersModelCopyWith<$Res> {
+  factory $AllUsersModelCopyWith(
+          AllUsersModel value, $Res Function(AllUsersModel) then) =
+      _$AllUsersModelCopyWithImpl<$Res, AllUsersModel>;
   @useResult
-  $Res call({List<UserModel> userList});
+  $Res call({int status, String message, List<UserModel> data});
 }
 
 /// @nodoc
-class _$TokenCopyWithImpl<$Res, $Val extends Token>
-    implements $TokenCopyWith<$Res> {
-  _$TokenCopyWithImpl(this._value, this._then);
+class _$AllUsersModelCopyWithImpl<$Res, $Val extends AllUsersModel>
+    implements $AllUsersModelCopyWith<$Res> {
+  _$AllUsersModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -333,44 +337,65 @@ class _$TokenCopyWithImpl<$Res, $Val extends Token>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userList = null,
+    Object? status = null,
+    Object? message = null,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      userList: null == userList
-          ? _value.userList
-          : userList // ignore: cast_nullable_to_non_nullable
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
               as List<UserModel>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$TokenImplCopyWith<$Res> implements $TokenCopyWith<$Res> {
-  factory _$$TokenImplCopyWith(
-          _$TokenImpl value, $Res Function(_$TokenImpl) then) =
-      __$$TokenImplCopyWithImpl<$Res>;
+abstract class _$$AllUsersModelImplCopyWith<$Res>
+    implements $AllUsersModelCopyWith<$Res> {
+  factory _$$AllUsersModelImplCopyWith(
+          _$AllUsersModelImpl value, $Res Function(_$AllUsersModelImpl) then) =
+      __$$AllUsersModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<UserModel> userList});
+  $Res call({int status, String message, List<UserModel> data});
 }
 
 /// @nodoc
-class __$$TokenImplCopyWithImpl<$Res>
-    extends _$TokenCopyWithImpl<$Res, _$TokenImpl>
-    implements _$$TokenImplCopyWith<$Res> {
-  __$$TokenImplCopyWithImpl(
-      _$TokenImpl _value, $Res Function(_$TokenImpl) _then)
+class __$$AllUsersModelImplCopyWithImpl<$Res>
+    extends _$AllUsersModelCopyWithImpl<$Res, _$AllUsersModelImpl>
+    implements _$$AllUsersModelImplCopyWith<$Res> {
+  __$$AllUsersModelImplCopyWithImpl(
+      _$AllUsersModelImpl _value, $Res Function(_$AllUsersModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userList = null,
+    Object? status = null,
+    Object? message = null,
+    Object? data = null,
   }) {
-    return _then(_$TokenImpl(
-      userList: null == userList
-          ? _value._userList
-          : userList // ignore: cast_nullable_to_non_nullable
+    return _then(_$AllUsersModelImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
               as List<UserModel>,
     ));
   }
@@ -378,62 +403,80 @@ class __$$TokenImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TokenImpl implements _Token {
-  _$TokenImpl({required final List<UserModel> userList}) : _userList = userList;
+class _$AllUsersModelImpl implements _AllUsersModel {
+  _$AllUsersModelImpl(
+      {required this.status,
+      required this.message,
+      required final List<UserModel> data})
+      : _data = data;
 
-  factory _$TokenImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TokenImplFromJson(json);
+  factory _$AllUsersModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AllUsersModelImplFromJson(json);
 
-  final List<UserModel> _userList;
   @override
-  List<UserModel> get userList {
-    if (_userList is EqualUnmodifiableListView) return _userList;
+  final int status;
+  @override
+  final String message;
+  final List<UserModel> _data;
+  @override
+  List<UserModel> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_userList);
+    return EqualUnmodifiableListView(_data);
   }
 
   @override
   String toString() {
-    return 'Token(userList: $userList)';
+    return 'AllUsersModel(status: $status, message: $message, data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TokenImpl &&
-            const DeepCollectionEquality().equals(other._userList, _userList));
+            other is _$AllUsersModelImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_userList));
+  int get hashCode => Object.hash(
+      runtimeType, status, message, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TokenImplCopyWith<_$TokenImpl> get copyWith =>
-      __$$TokenImplCopyWithImpl<_$TokenImpl>(this, _$identity);
+  _$$AllUsersModelImplCopyWith<_$AllUsersModelImpl> get copyWith =>
+      __$$AllUsersModelImplCopyWithImpl<_$AllUsersModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TokenImplToJson(
+    return _$$AllUsersModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _Token implements Token {
-  factory _Token({required final List<UserModel> userList}) = _$TokenImpl;
+abstract class _AllUsersModel implements AllUsersModel {
+  factory _AllUsersModel(
+      {required final int status,
+      required final String message,
+      required final List<UserModel> data}) = _$AllUsersModelImpl;
 
-  factory _Token.fromJson(Map<String, dynamic> json) = _$TokenImpl.fromJson;
+  factory _AllUsersModel.fromJson(Map<String, dynamic> json) =
+      _$AllUsersModelImpl.fromJson;
 
   @override
-  List<UserModel> get userList;
+  int get status;
+  @override
+  String get message;
+  @override
+  List<UserModel> get data;
   @override
   @JsonKey(ignore: true)
-  _$$TokenImplCopyWith<_$TokenImpl> get copyWith =>
+  _$$AllUsersModelImplCopyWith<_$AllUsersModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -172,12 +172,7 @@ class _AddAdminState extends State<AddAdmin> {
                               onPressed: () {
                                 //check orm key validation
                                 if (formKey.currentState!.validate()) {
-                                  if (image == null) {
-                                    toastWidget(message: 'Please select an image');
-                                    return;
-                                  } else {
-                                    saveAdmin();
-                                  }
+                                  saveAdmin();
                                 }
                               }))
                 ],
@@ -243,88 +238,88 @@ class _AddAdminState extends State<AddAdmin> {
         isloading = true;
       });
       ImageUploadModel? imageUploadModel;
-      //copied code
-      http.StreamedResponse res = await uploadProcess();
-      if (res.statusCode == 200) {
-        final uploadresponse = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-        printLongString(uploadresponse.toString());
+      if (image != null) {
+        http.StreamedResponse res = await uploadProcess();
+        if (res.statusCode == 200) {
+          final uploadresponse = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
+          printLongString(uploadresponse.toString());
 
-        setState(() {
-          imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
-        });
-      } else if (res.statusCode == 401) {
-        //refetch token bycalling refresh token api
-        String link = '$baseUrl$auth/refresh-token?oldtoken=${TokenService.instance.value.token.value}';
-        var token_response = await ApiService().refreshToken(link);
-        if (token_response.statusCode == 200) {
-          UserInfo userinfo = UserInfo.fromJson(jsonDecode(token_response.body));
-          TokenService.instance.setApiTokenValue(userinfo.data.token);
-          //update user value in token service
-          TokenService.instance.setUserValue(userinfo.data.user);
-          //calling tha upload image api again after token updating
-          http.StreamedResponse uploadagain = await uploadProcess();
-          if (uploadagain.statusCode == 200) {
-            final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
-            setState(() {
-              imageUploadModel = ImageUploadModel.fromJson(responseagain);
-            });
-            print('object:' + imageUploadModel!.toJson().toString());
+          setState(() {
+            imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
+          });
+        } else if (res.statusCode == 401) {
+          //refetch token bycalling refresh token api
+          String link =
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}';
+          var token_response = await ApiService().refreshToken(link);
+          if (token_response.statusCode == 200) {
+            CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(token_response.body));
+
+            //setting state for admin
+            TokenService.instance.setAdminValue(admin.data.admin);
+            //settign token vale
+            TokenService.instance.setApiTokenValue(admin.data.token);
+            //calling tha upload image api again after token updating
+            http.StreamedResponse uploadagain = await uploadProcess();
+            if (uploadagain.statusCode == 200) {
+              final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
+              setState(() {
+                imageUploadModel = ImageUploadModel.fromJson(responseagain);
+              });
+              print('object:' + imageUploadModel!.toJson().toString());
+            } else {
+              final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
+              printLongString(responseagain.toString());
+
+              toastWidget(message: 'Error uploading image');
+              return;
+            }
           } else {
-            final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
-            printLongString(responseagain.toString());
-
+            printLongString(token_response.body);
+            setState(() {
+              isloading = false;
+            });
             toastWidget(message: 'Error uploading image');
             return;
           }
         } else {
-          printLongString(token_response.body);
-          setState(() {
-            isloading = false;
-          });
+          final response = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
+          printLongString(response.toString());
           toastWidget(message: 'Error uploading image');
-          return;
         }
-      } else {
-        final response = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-        printLongString(response.toString());
-        toastWidget(message: 'Error uploading image');
       }
+      printLongString(imageUploadModel!.data.image_url);
+      String link = '$baseUrl$adminEndpoint/add-admin';
+      AdminSignupModel adminSignupModel = AdminSignupModel(
+        adminId: 0,
+        adminName: nameController.text,
+        email: emailController.text,
+        phone: phoneController.text,
+        password: passwordController.text,
+        profileImage: imageUploadModel == null
+            ? 'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'
+            : imageUploadModel!.data.image_url,
+        isEmailVerified: false,
+        signUpDate: DateTime.now().toUtc().toIso8601String(),
+      );
 
-      if (imageUploadModel == null) {
-        toastWidget(message: 'Error uploading image, try again');
-        return;
+      var response = await ApiService().postRequest(link, adminSignupModel.toJson());
+      if (response.statusCode == 200) {
+        AdminData newAdmin = AdminData.fromJson(jsonDecode(response.body)['data']);
+
+        //adding new admin in provider state
+        Provider.of<AdminStateService>(context, listen: false).addAdmin(newAdmin);
+
+        //show toast message
+        toastWidget(message: 'Admin added successfully');
+        Navigator.pop(context);
       } else {
-        printLongString(imageUploadModel!.data.image_url);
-        String link = '$baseUrl$admin/add-admin';
-        AdminSignupModel adminSignupModel = AdminSignupModel(
-          adminId: 0,
-          adminName: nameController.text,
-          email: emailController.text,
-          phone: phoneController.text,
-          password: passwordController.text,
-          profileImage: imageUploadModel!.data.image_url,
-          isEmailVerified: false,
-          signUpDate: DateTime.now().toUtc().toIso8601String(),
-        );
+        printLongString(response.body.toString());
 
-        var response = await ApiService().postRequest(link, adminSignupModel.toJson());
-        if (response.statusCode == 200) {
-          AdminData newAdmin = AdminData.fromJson(jsonDecode(response.body)['data']);
-
-          //adding new admin in provider state
-          Provider.of<AppStateService>(context, listen: false).addAdmin(newAdmin);
-
-          //show toast message
-          toastWidget(message: 'Admin added successfully');
-          Navigator.pop(context);
-        } else {
-          printLongString(response.body.toString());
-
-          //gettign message from response
-          var message = jsonDecode(response.body)['message'];
-          //show toast message
-          toastWidget(message: message);
-        }
+        //gettign message from response
+        var message = jsonDecode(response.body)['message'];
+        //show toast message
+        toastWidget(message: message);
       }
     } catch (ex) {
       printLongString(ex.toString());
@@ -347,7 +342,7 @@ class _AddAdminState extends State<AddAdmin> {
       'accept': '*/*'
     };
 
-    var request = http.MultipartRequest('POST', Uri.parse('$baseUrl$admin/upload-admin-image'));
+    var request = http.MultipartRequest('POST', Uri.parse('$baseUrl$adminEndpoint/upload-admin-image'));
 
     request.files.add(
         await http.MultipartFile.fromPath('image', image!.path, filename: image!.path.split('/').last));

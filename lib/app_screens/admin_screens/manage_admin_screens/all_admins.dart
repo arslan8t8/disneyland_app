@@ -33,82 +33,80 @@ class _AllAdminsState extends State<AllAdmins> {
 
   @override
   Widget build(BuildContext context) {
-    var admins = context.watch<AppStateService>().getAllAdmins();
+    var admins = context.watch<AdminStateService>().getAllAdmins();
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
           body: SafeArea(
-            child: isloading
-                ? loadingWidget()
-                : Column(
+            child: Column(
+              children: [
+                SingleChildScrollView(
+                  child: Column(
                     children: [
-                      SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 70.h,
-                              decoration: BoxDecoration(
-                                color: primaryColor,
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(30.r),
-                                  bottomRight: Radius.circular(30.r),
-                                ),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    offset: Offset(0, 0),
-                                    blurRadius: 20,
-                                    color: color1,
-                                  ),
-                                ],
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                                      Container(
-                                          decoration: BoxDecoration(
-                                            color: colorWhite,
-                                            borderRadius: BorderRadius.circular(10.0),
-                                          ),
-                                          width: 265.w,
-                                          height: 50.h,
-                                          child: const SearchWidget()),
-                                    ]),
-                                  ],
-                                ),
-                              ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 70.h,
+                        decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(30.r),
+                            bottomRight: Radius.circular(30.r),
+                          ),
+                          boxShadow: const [
+                            BoxShadow(
+                              offset: Offset(0, 0),
+                              blurRadius: 20,
+                              color: color1,
                             ),
-                            SizedBox(height: 15.h),
                           ],
                         ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                                Container(
+                                    decoration: BoxDecoration(
+                                      color: colorWhite,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    width: 265.w,
+                                    height: 50.h,
+                                    child: const SearchWidget()),
+                              ]),
+                            ],
+                          ),
+                        ),
                       ),
-                      isloading
-                          ? loadingWidget()
-                          : Expanded(
-                              child: Padding(
-                                  padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
-                                  child: SingleChildScrollView(
-                                      child: Column(
-                                    children: [
-                                      ListView.builder(
-                                        shrinkWrap: true,
-                                        primary: false,
-                                        itemCount: admins.length,
-                                        itemBuilder: (context, index) {
-                                          return AdminViewWidget(
-                                            admin: admins[index],
-                                          );
-                                        },
-                                      ),
-                                      SizedBox(height: 90.h)
-                                    ],
-                                  ))),
-                            ),
+                      SizedBox(height: 15.h),
                     ],
                   ),
+                ),
+                isloading
+                    ? loadingWidget()
+                    : Expanded(
+                        child: Padding(
+                            padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+                            child: SingleChildScrollView(
+                                child: Column(
+                              children: [
+                                ListView.builder(
+                                  shrinkWrap: true,
+                                  primary: false,
+                                  itemCount: admins.length,
+                                  itemBuilder: (context, index) {
+                                    return AdminViewWidget(
+                                      admin: admins[index],
+                                    );
+                                  },
+                                ),
+                                SizedBox(height: 90.h)
+                              ],
+                            ))),
+                      ),
+              ],
+            ),
           ),
           floatingActionButton: Padding(
             padding: EdgeInsets.only(bottom: 60.h),
@@ -133,7 +131,7 @@ class _AllAdminsState extends State<AllAdmins> {
       setState(() {
         isloading = true;
       });
-      String link = '$baseUrl$admin/all-admins';
+      String link = '$baseUrl$adminEndpoint/all-admins';
 
       var response = await ApiService().getRequest(link);
 
@@ -145,7 +143,7 @@ class _AllAdminsState extends State<AllAdmins> {
 
         AdminModel admins = AdminModel.fromJson(jsonDecode(response.body));
         //setting state for admins
-        Provider.of<AppStateService>(context, listen: false).setAllAdmins(admins.data);
+        Provider.of<AdminStateService>(context, listen: false).setAllAdmins(admins.data);
       } else {
         setState(() {
           isloading = false;

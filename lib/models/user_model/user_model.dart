@@ -20,12 +20,14 @@ abstract class UserModel with _$UserModel {
 }
 
 @freezed
-abstract class Token with _$Token {
-  factory Token({
-    required List<UserModel> userList,
-  }) = _Token;
+abstract class AllUsersModel with _$AllUsersModel {
+  factory AllUsersModel({
+    required int status,
+    required String message,
+    required List<UserModel> data,
+  }) = _AllUsersModel;
 
-  factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
+  factory AllUsersModel.fromJson(Map<String, dynamic> json) => _$AllUsersModelFromJson(json);
 }
 
 @freezed

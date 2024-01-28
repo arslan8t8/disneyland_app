@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:disneyland_app/app_screens/admin_screens/forgot_password_admin.dart';
 import 'package:disneyland_app/models/admin_model/admin_model.dart';
 import 'package:disneyland_app/models/user_model/user_model.dart';
 import 'package:disneyland_app/services/api_service.dart';
@@ -89,6 +90,26 @@ class _AdminLoginState extends State<AdminLogin> {
                 SizedBox(
                   height: 20.h,
                 ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => const ForgotPasswordAdmin()));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 20.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text('Forgot Password?',
+                            style: TextStyle(
+                                color: colorWhite, fontSize: 14.sp, fontWeight: FontWeight.w500)),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
                 SizedBox(
                   width: 300.w,
                   child: isloading
@@ -114,7 +135,7 @@ class _AdminLoginState extends State<AdminLogin> {
       setState(() {
         isloading = true;
       });
-      String link = '$baseUrl$auth/admin-login';
+      String link = '$baseUrl$authEndpoint/admin-login';
       Map<String, dynamic> data = {
         'email': emailController.text,
         'password': passwordController.text,

@@ -1,9 +1,12 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:disneyland_app/app_screens/admin_screens/setting_screens/change_password.dart';
 import 'package:disneyland_app/app_screens/choose.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -48,7 +51,11 @@ class _SettingScreenState extends State<SettingScreen> {
             width: 300.w,
             child: PrimaryButton(
                 text: 'Logout',
-                onPressed: () {
+                onPressed: () async {
+                  SharedPreferences prefs = await SharedPreferences.getInstance();
+                  await prefs.clear();
+
+                  //navigate to login screen
                   Navigator.pushReplacement(
                       context, MaterialPageRoute(builder: (context) => const UserChoice()));
                 },

@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:disneyland_app/models/admin_model/admin_model.dart';
-import 'package:disneyland_app/models/admin_model/admin_signup_model.dart';
 import 'package:disneyland_app/models/image_model/image_upload_model.dart';
 import 'package:disneyland_app/models/user_model/user_model.dart';
 import 'package:disneyland_app/services/api_service.dart';
@@ -21,32 +20,32 @@ import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
-class UpdateAdmin extends StatefulWidget {
-  final AdminData admin;
-  const UpdateAdmin({super.key, required this.admin});
+class UpdateUser extends StatefulWidget {
+  final UserModel user;
+  const UpdateUser({super.key, required this.user});
 
   @override
-  State<UpdateAdmin> createState() => _UpdateAdminState();
+  State<UpdateUser> createState() => _UpdateUserState();
 }
 
-class _UpdateAdminState extends State<UpdateAdmin> {
-  //controller
+class _UpdateUserState extends State<UpdateUser> {
+  //controllers
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-//formskey
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool obscureText = true;
 
   bool isloading = false;
 
   XFile? image;
 
+  //form key
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   void initState() {
-    nameController.text = widget.admin.adminName;
-    phoneController.text = widget.admin.phone;
-    emailController.text = widget.admin.email;
+    nameController.text = widget.user.userName;
+    phoneController.text = widget.user.phone;
+    emailController.text = widget.user.email;
 
     super.initState();
   }
@@ -58,7 +57,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
       appBar: AppBar(
         backgroundColor: primaryColor,
         title: const Text(
-          'Update Admin',
+          'Update User',
           style: TextStyle(color: colorWhite),
         ),
         centerTitle: true,
@@ -116,19 +115,14 @@ class _UpdateAdminState extends State<UpdateAdmin> {
                   Container(
                     height: 150.h,
                     width: 150.w,
-                    decoration: image == null
-                        ? BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: colorWhite,
-                            image: DecorationImage(
-                                image: NetworkImage(widget.admin.profileImage), fit: BoxFit.cover),
-                          )
-                        : BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: colorWhite,
-                            image:
-                                DecorationImage(image: FileImage(File(image!.path)), fit: BoxFit.cover),
-                          ),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: colorWhite,
+                      image: image == null
+                          ? DecorationImage(
+                              image: NetworkImage(widget.user.profileImage), fit: BoxFit.cover)
+                          : DecorationImage(image: FileImage(File(image!.path)), fit: BoxFit.cover),
+                    ),
                     child: Column(
                       children: [
                         Row(
@@ -138,7 +132,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
                               onTap: () {
                                 showImageSource(context);
                               },
-                              child: const Icon(
+                              child: Icon(
                                 Icons.camera_alt,
                                 color: colorBlack,
                               ),
@@ -156,10 +150,10 @@ class _UpdateAdminState extends State<UpdateAdmin> {
                       child: isloading
                           ? loadingWidget()
                           : PrimaryButton(
-                              text: 'Update Admin',
+                              text: 'Add User',
                               onPressed: () {
                                 if (formKey.currentState!.validate()) {
-                                  saveAdmin();
+                                  saveUser();
                                 }
                               }))
                 ],
@@ -218,7 +212,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
 
   //backend logic
 
-  Future saveAdmin() async {
+  Future saveUser() async {
     try {
       setState(() {
         isloading = true;
@@ -239,7 +233,6 @@ class _UpdateAdminState extends State<UpdateAdmin> {
           String link =
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}';
           var token_response = await ApiService().refreshToken(link);
-
           if (token_response.statusCode == 200) {
             CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(token_response.body));
 
@@ -247,6 +240,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
             TokenService.instance.setAdminValue(admin.data.admin);
             //settign token vale
             TokenService.instance.setApiTokenValue(admin.data.token);
+            //calling tha upload image api again after token updating
             http.StreamedResponse uploadagain = await uploadProcess();
             if (uploadagain.statusCode == 200) {
               final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
@@ -276,26 +270,28 @@ class _UpdateAdminState extends State<UpdateAdmin> {
         }
       }
 
-      String link = '$baseUrl$adminEndpoint/update-admin';
-      AdminData adminSignupModel = AdminData(
-        adminId: widget.admin.adminId,
-        adminName: nameController.text,
-        email: emailController.text,
+      String link = '$baseUrl$usersEndpoint/update-user';
+      UserModel usertoupdate = UserModel(
+        userId: widget.user.userId,
+        userName: nameController.text,
         phone: phoneController.text,
-        profileImage: image == null ? widget.admin.profileImage : imageUploadModel!.data.image_url,
-        isEmailVerified: false,
-        signUpDate: widget.admin.signUpDate,
+        email: emailController.text,
+        isEmailVerified: widget.user.isEmailVerified,
+        signUpDate: widget.user.signUpDate,
+        voteCasted: widget.user.voteCasted,
+        profileImage:
+            imageUploadModel == null ? widget.user.profileImage : imageUploadModel!.data.image_url,
       );
 
-      var response = await ApiService().postRequest(link, adminSignupModel.toJson());
+      var response = await ApiService().postRequest(link, usertoupdate.toJson());
       if (response.statusCode == 200) {
-        AdminData newAdmin = AdminData.fromJson(jsonDecode(response.body)['data']);
+        UserModel updatedUser = UserModel.fromJson(jsonDecode(response.body)['data']);
 
         //adding new admin in provider state
-        Provider.of<AdminStateService>(context, listen: false).updateAdmin(newAdmin);
+        Provider.of<UserStateService>(context, listen: false).updateUser(updatedUser);
 
         //show toast message
-        toastWidget(message: 'Admin added successfully');
+        toastWidget(message: 'user added successfully');
         Navigator.pop(context);
       } else {
         printLongString(response.body.toString());
@@ -326,7 +322,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
       'accept': '*/*'
     };
 
-    var request = http.MultipartRequest('POST', Uri.parse('$baseUrl$adminEndpoint/upload-admin-image'));
+    var request = http.MultipartRequest('POST', Uri.parse('$baseUrl$usersEndpoint/upload-user-image'));
 
     request.files.add(
         await http.MultipartFile.fromPath('image', image!.path, filename: image!.path.split('/').last));

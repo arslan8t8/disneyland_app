@@ -1,10 +1,19 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, use_build_context_synchronously
+
+import 'dart:convert';
 
 import 'package:disneyland_app/app_screens/choose.dart';
+import 'package:disneyland_app/models/character_model/character_model.dart';
+import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/state_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
+import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/widgets/character_widget.dart';
+import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class VotingScreen extends StatefulWidget {
   const VotingScreen({super.key});
@@ -14,8 +23,16 @@ class VotingScreen extends StatefulWidget {
 }
 
 class _VotingScreenState extends State<VotingScreen> {
+  bool isloading = false;
+  @override
+  void initState() {
+    getcharacters();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var allcahracters = context.watch<CharacterStateService>().getAllCharacters();
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -29,7 +46,9 @@ class _VotingScreenState extends State<VotingScreen> {
             automaticallyImplyLeading: false,
             actions: [
               IconButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    SharedPreferences prefs = await SharedPreferences.getInstance();
+                    await prefs.clear();
                     Navigator.pushReplacement(
                         context, MaterialPageRoute(builder: (context) => const UserChoice()));
                   },
@@ -48,19 +67,50 @@ class _VotingScreenState extends State<VotingScreen> {
                 GridView.builder(
                   shrinkWrap: true,
                   primary: false,
-                  itemCount: 10,
+                  itemCount: allcahracters.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait ? 2 : 3,
                       childAspectRatio: 0.80.h,
                       crossAxisSpacing: 10.0,
                       mainAxisSpacing: 10.0),
                   itemBuilder: (context, index) {
-                    return const CharacterWidget();
+                    return CharacterWidget(
+                      character: allcahracters[index],
+                    );
                   },
                 ),
               ],
             )),
           ))),
     );
+  }
+
+  //getting characters from api
+  Future getcharacters() async {
+    try {
+      setState(() {
+        isloading = true;
+      });
+      String link = '$baseUrl$disneylandEndPoint/disneyland-characters';
+      var response = await ApiService().getRequest(link);
+      if (response.statusCode == 200) {
+        printLongString(response.body);
+        CharacterData characterData = CharacterData.fromJson(jsonDecode(response.body));
+        //set state
+        Provider.of<CharacterStateService>(context, listen: false).setAllCharacters(characterData.data);
+      } else {
+        //show toast message
+        toastWidget(message: 'Error occured, please try again');
+      }
+    } catch (ex) {
+      setState(() {
+        isloading = false;
+      });
+      //show toast message
+      toastWidget(message: 'Error occured, please try again');
+    } finally {
+      isloading = false;
+      setState(() {});
+    }
   }
 }

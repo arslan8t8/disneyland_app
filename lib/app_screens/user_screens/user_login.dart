@@ -133,7 +133,7 @@ class _UserLoginState extends State<UserLogin> {
         isloading = true;
       });
 
-      String link = '$baseUrl$auth/login';
+      String link = '$baseUrl$authEndpoint/login';
       var body = {
         'email': emailController.text,
         'password': passwordController.text,

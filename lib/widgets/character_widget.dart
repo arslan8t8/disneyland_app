@@ -1,12 +1,20 @@
+// ignore_for_file: must_be_immutable, use_build_context_synchronously
+
 import 'package:disneyland_app/app_screens/user_screens/success_screen.dart';
+import 'package:disneyland_app/models/character_model/character_model.dart';
+import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/token_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
+import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CharacterWidget extends StatefulWidget {
+  final CharacterModel character;
   const CharacterWidget({
     super.key,
+    required this.character,
   });
 
   @override
@@ -14,13 +22,13 @@ class CharacterWidget extends StatefulWidget {
 }
 
 class _CharacterWidgetState extends State<CharacterWidget> {
-  bool isLoading = false;
+  bool isloading = false;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const SuccessVoteScreen()));
+        castVote();
       },
       child: Container(
         width: 164.w,
@@ -36,7 +44,7 @@ class _CharacterWidgetState extends State<CharacterWidget> {
             ),
           ],
         ),
-        child: isLoading
+        child: isloading
             ? loadingWidget()
             : Column(
                 children: [
@@ -48,12 +56,9 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                       //add some dummy image url
 
                       image: DecorationImage(
-                          image: NetworkImage(
-                              'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'),
-                          fit: BoxFit.cover),
+                          image: NetworkImage(widget.character.imageUrl), fit: BoxFit.cover),
                     ),
                   ),
-                  const Divider(thickness: 1, height: 1, color: colorText),
                   SizedBox(height: 10.h),
                   SizedBox(
                     width: 150.w,
@@ -62,7 +67,7 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                       padding: EdgeInsets.symmetric(horizontal: 2.w),
                       child: Center(
                         child: Text(
-                          'widget.item!.item!',
+                          widget.character.characterName,
                           softWrap: true,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -79,5 +84,42 @@ class _CharacterWidgetState extends State<CharacterWidget> {
               ),
       ),
     );
+  }
+
+  //cating vote
+
+  Future castVote() async {
+    try {
+      setState(() {
+        isloading = true;
+      });
+      final user = TokenService.instance.value.user.value;
+
+      String link = '$baseUrl$voteEndpoint/submit-vote';
+      var body = {
+        "voteId": 0,
+        "userId": user!.userId,
+        "characterId": widget.character.characterId,
+        "voteTime": DateTime.now().toUtc().toIso8601String(),
+      };
+
+      var response = await ApiService().postRequest(link, body);
+
+      if (response.statusCode == 200) {
+        printLongString(response.body.toString());
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const SuccessVoteScreen()));
+      } else {
+        toastWidget(message: 'Error occured, please try again');
+      }
+    } catch (ex) {
+      setState(() {
+        isloading = false;
+      });
+      //show toast message
+      toastWidget(message: 'Error occured, please try again');
+    } finally {
+      isloading = false;
+      setState(() {});
+    }
   }
 }

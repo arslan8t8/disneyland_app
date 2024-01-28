@@ -2,7 +2,7 @@
 
 import 'package:disneyland_app/app_screens/admin_screens/manage_admin_screens/all_admins.dart';
 import 'package:disneyland_app/app_screens/admin_screens/manage_characters_screens/all_characters.dart';
-import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/all_users.dart';
+import 'package:disneyland_app/app_screens/admin_screens/manage_user_screens/all_users.dart';
 import 'package:disneyland_app/app_screens/admin_screens/report_screens/report_stats.dart';
 import 'package:disneyland_app/app_screens/admin_screens/setting_screens/setting.dart';
 import 'package:disneyland_app/utility/colors.dart';
@@ -53,7 +53,7 @@ class _MainPageState extends State<BottomBarWidget> {
       bottomNavigationBar: Wrap(
         children: [
           Container(
-            height: 70.h,
+            height: 75.h,
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(

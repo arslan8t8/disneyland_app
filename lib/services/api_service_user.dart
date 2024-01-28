@@ -1,7 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:convert';
-import 'package:disneyland_app/models/admin_model/admin_model.dart';
 import 'package:disneyland_app/models/user_model/user_model.dart';
 import 'package:disneyland_app/services/token_service.dart';
 import 'package:disneyland_app/utility/constant.dart';
@@ -30,12 +29,11 @@ class ApiService {
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
-        CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(refresh.body));
-
-        //setting state for admin
-        TokenService.instance.setAdminValue(admin.data.admin);
-        //settign token vale
-        TokenService.instance.setApiTokenValue(admin.data.token);
+        UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
+        TokenService.instance.setApiTokenValue(user.data.token);
+        //update user value in token service
+        TokenService.instance.setUserValue(user.data.user);
+        //calling tha api again after token updating
 
         var response = await http.get(Uri.parse(link), headers: {
           "Accept": "application/json",
@@ -58,12 +56,11 @@ class ApiService {
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
-        CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(refresh.body));
-
-        //setting state for admin
-        TokenService.instance.setAdminValue(admin.data.admin);
-        //settign token vale
-        TokenService.instance.setApiTokenValue(admin.data.token);
+        UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
+        TokenService.instance.setApiTokenValue(user.data.token);
+        //update user value in token service
+        TokenService.instance.setUserValue(user.data.user);
+        //calling tha api again after token updating
 
         var response = await http.put(Uri.parse(link), headers: {
           "Accept": "application/json",
@@ -86,12 +83,10 @@ class ApiService {
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
-        CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(refresh.body));
-
-        //setting state for admin
-        TokenService.instance.setAdminValue(admin.data.admin);
-        //settign token vale
-        TokenService.instance.setApiTokenValue(admin.data.token);
+        UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
+        TokenService.instance.setApiTokenValue(user.data.token);
+        //update user value in token service
+        TokenService.instance.setUserValue(user.data.user);
         //calling tha api again after token updating
 
         var response = await http.put(Uri.parse(link), headers: {
@@ -115,12 +110,10 @@ class ApiService {
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
-        CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(refresh.body));
-
-        //setting state for admin
-        TokenService.instance.setAdminValue(admin.data.admin);
-        //settign token vale
-        TokenService.instance.setApiTokenValue(admin.data.token);
+        UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
+        TokenService.instance.setApiTokenValue(user.data.token);
+        //update user value in token service
+        TokenService.instance.setUserValue(user.data.user);
         //calling tha api again after token updating
 
         var response = await http.post(Uri.parse(link), body: jsonEncode(body), headers: {
@@ -146,12 +139,10 @@ class ApiService {
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
-        CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(refresh.body));
-
-        //setting state for admin
-        TokenService.instance.setAdminValue(admin.data.admin);
-        //settign token vale
-        TokenService.instance.setApiTokenValue(admin.data.token);
+        UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
+        TokenService.instance.setApiTokenValue(user.data.token);
+        //update user value in token service
+        TokenService.instance.setUserValue(user.data.user);
         //calling tha api again after token updating
 
         var response = await http.post(Uri.parse(link), headers: {
@@ -176,12 +167,10 @@ class ApiService {
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
-        CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(refresh.body));
-
-        //setting state for admin
-        TokenService.instance.setAdminValue(admin.data.admin);
-        //settign token vale
-        TokenService.instance.setApiTokenValue(admin.data.token);
+        UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
+        TokenService.instance.setApiTokenValue(user.data.token);
+        //update user value in token service
+        TokenService.instance.setUserValue(user.data.user);
         //calling tha api again after token updating
 
         var response = await http.delete(Uri.parse(link), body: jsonEncode(body), headers: {
@@ -206,12 +195,10 @@ class ApiService {
               '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
-        CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(refresh.body));
-
-        //setting state for admin
-        TokenService.instance.setAdminValue(admin.data.admin);
-        //settign token vale
-        TokenService.instance.setApiTokenValue(admin.data.token);
+        UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
+        TokenService.instance.setApiTokenValue(user.data.token);
+        //update user value in token service
+        TokenService.instance.setUserValue(user.data.user);
         //calling tha api again after token updating
 
         var response = await http.delete(Uri.parse(link), headers: {

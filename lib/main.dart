@@ -11,7 +11,9 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (_) => AppStateService()),
+      ChangeNotifierProvider(create: (_) => AdminStateService()),
+      ChangeNotifierProvider(create: (_) => UserStateService()),
+      ChangeNotifierProvider(create: (_) => CharacterStateService()),
     ],
     child: const MyApp(),
   ));

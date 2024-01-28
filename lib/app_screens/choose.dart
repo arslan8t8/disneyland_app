@@ -186,7 +186,7 @@ class _UserChoiceState extends State<UserChoice> {
         isloading = true;
       });
 
-      String link = '$baseUrl$auth/register';
+      String link = '$baseUrl$authEndpoint/register';
 
       RegisterUserModel newUser = RegisterUserModel(
           userId: 0,
