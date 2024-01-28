@@ -2,6 +2,7 @@
 
 import 'package:disneyland_app/app_screens/user_screens/reset_password.dart';
 import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/api_service_user.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/widgets/buttons.dart';
@@ -76,7 +77,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
       String link = '$baseUrl$authEndpoint/forgot-password?email=${emailController.text}';
 
-      var response = await ApiService().postcall(link);
+      var response = await ApiServiceUser().postcall(link);
 
       if (response.statusCode == 200) {
         setState(() {

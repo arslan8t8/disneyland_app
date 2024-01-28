@@ -6,6 +6,7 @@ import 'package:disneyland_app/app_screens/user_screens/forgot-password.dart';
 import 'package:disneyland_app/app_screens/user_screens/voting_screen.dart';
 import 'package:disneyland_app/models/user_model/user_model.dart';
 import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/api_service_user.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
 
@@ -138,7 +139,7 @@ class _UserLoginState extends State<UserLogin> {
         'email': emailController.text,
         'password': passwordController.text,
       };
-      var response = await ApiService().postRequest(link, body);
+      var response = await ApiServiceUser().postRequest(link, body);
       if (response.statusCode == 200) {
         setState(() {
           isloading = false;

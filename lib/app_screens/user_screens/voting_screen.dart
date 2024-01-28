@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:disneyland_app/app_screens/choose.dart';
 import 'package:disneyland_app/models/character_model/character_model.dart';
 import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/api_service_user.dart';
 import 'package:disneyland_app/services/state_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
@@ -92,7 +93,7 @@ class _VotingScreenState extends State<VotingScreen> {
         isloading = true;
       });
       String link = '$baseUrl$disneylandEndPoint/disneyland-characters';
-      var response = await ApiService().getRequest(link);
+      var response = await ApiServiceUser().getRequest(link);
       if (response.statusCode == 200) {
         printLongString(response.body);
         CharacterData characterData = CharacterData.fromJson(jsonDecode(response.body));

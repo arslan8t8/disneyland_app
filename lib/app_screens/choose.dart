@@ -7,6 +7,7 @@ import 'package:disneyland_app/app_screens/user_screens/user_login.dart';
 import 'package:disneyland_app/app_screens/user_screens/voting_screen.dart';
 import 'package:disneyland_app/models/user_model/user_model.dart';
 import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/api_service_user.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/services/token_service.dart';
@@ -200,7 +201,7 @@ class _UserChoiceState extends State<UserChoice> {
           signUpDate: DateTime.now().toUtc().toIso8601String(),
           voteCasted: 0);
 
-      var response = await ApiService().postRequest(link, newUser.toJson());
+      var response = await ApiServiceUser().postRequest(link, newUser.toJson());
 
       if (response.statusCode == 200) {
         printLongString(response.body.toString());

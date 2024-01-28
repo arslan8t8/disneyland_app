@@ -3,6 +3,7 @@
 import 'package:disneyland_app/app_screens/user_screens/success_screen.dart';
 import 'package:disneyland_app/models/character_model/character_model.dart';
 import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/api_service_user.dart';
 import 'package:disneyland_app/services/token_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
@@ -103,7 +104,7 @@ class _CharacterWidgetState extends State<CharacterWidget> {
         "voteTime": DateTime.now().toUtc().toIso8601String(),
       };
 
-      var response = await ApiService().postRequest(link, body);
+      var response = await ApiServiceUser().postRequest(link, body);
 
       if (response.statusCode == 200) {
         printLongString(response.body.toString());

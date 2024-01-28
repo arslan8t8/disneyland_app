@@ -6,7 +6,7 @@ import 'package:disneyland_app/services/token_service.dart';
 import 'package:disneyland_app/utility/constant.dart';
 import 'package:http/http.dart' as http;
 
-class ApiService {
+class ApiServiceUser {
   var getheaders = {
     "Accept": "application/json",
     "Access-Control-Allow-Origin": "*",
@@ -26,7 +26,7 @@ class ApiService {
     if (response.statusCode == 401) {
       var refresh = await http.post(
           Uri.parse(
-              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}&Isadmin=false'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
         UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
@@ -53,7 +53,7 @@ class ApiService {
     if (response.statusCode == 401) {
       var refresh = await http.post(
           Uri.parse(
-              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}&Isadmin=false'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
         UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
@@ -80,7 +80,7 @@ class ApiService {
     if (response.statusCode == 401) {
       var refresh = await http.post(
           Uri.parse(
-              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}&Isadmin=false'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
         UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
@@ -107,7 +107,7 @@ class ApiService {
     if (response.statusCode == 401) {
       var refresh = await http.post(
           Uri.parse(
-              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}&Isadmin=false'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
         UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
@@ -136,7 +136,7 @@ class ApiService {
     if (response.statusCode == 401) {
       var refresh = await http.post(
           Uri.parse(
-              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}&Isadmin=false'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
         UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
@@ -164,7 +164,7 @@ class ApiService {
     if (response.statusCode == 401) {
       var refresh = await http.post(
           Uri.parse(
-              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}&Isadmin=false'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
         UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));
@@ -192,7 +192,7 @@ class ApiService {
     if (response.statusCode == 401) {
       var refresh = await http.post(
           Uri.parse(
-              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}'),
+              '$baseUrl$authEndpoint/refresh-token?oldtoken=${TokenService.instance.value.token.value}&Isadmin=false'),
           headers: postheaders);
       if (refresh.statusCode == 200) {
         UserInfo user = UserInfo.fromJson(jsonDecode(refresh.body));

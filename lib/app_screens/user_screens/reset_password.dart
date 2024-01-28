@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:disneyland_app/app_screens/user_screens/user_login.dart';
 import 'package:disneyland_app/services/api_service.dart';
+import 'package:disneyland_app/services/api_service_user.dart';
 import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/widgets/buttons.dart';
@@ -163,7 +164,7 @@ class _ResetPasswordState extends State<ResetPassword> {
         'code': codeController.text,
       };
 
-      var response = await ApiService().postRequest(link, body);
+      var response = await ApiServiceUser().postRequest(link, body);
 
       if (response.statusCode == 200) {
         setState(() {
