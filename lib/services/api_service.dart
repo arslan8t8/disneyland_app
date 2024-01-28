@@ -2,8 +2,8 @@
 
 import 'dart:convert';
 import 'package:disneyland_app/models/user_model/user_model.dart';
-import 'package:disneyland_app/services/constant_service.dart';
 import 'package:disneyland_app/services/token_service.dart';
+import 'package:disneyland_app/utility/constant.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {

@@ -4,7 +4,7 @@ const String baseUrl = 'https://disneyland.wardrobesetc.com/api/v1';
 
 //wardrobe API endpoints
 const String auth = '/Auth';
-// const String home = '/login';
+const String admin = '/Admin';
 // const String users = '/';
 // const String favourite = '/Favourite';
 // const String brands = '/Brands';

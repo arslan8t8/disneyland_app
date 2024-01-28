@@ -4,8 +4,8 @@ import 'dart:convert';
 
 import 'package:disneyland_app/app_screens/user_screens/user_login.dart';
 import 'package:disneyland_app/services/api_service.dart';
-import 'package:disneyland_app/services/color_service.dart';
-import 'package:disneyland_app/services/constant_service.dart';
+import 'package:disneyland_app/utility/colors.dart';
+import 'package:disneyland_app/utility/constant.dart';
 import 'package:disneyland_app/widgets/buttons.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:disneyland_app/widgets/textfield_widget.dart';

@@ -5,7 +5,7 @@ import 'package:disneyland_app/app_screens/admin_screens/manage_characters_scree
 import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/all_users.dart';
 import 'package:disneyland_app/app_screens/admin_screens/report_screens/report_stats.dart';
 import 'package:disneyland_app/app_screens/admin_screens/setting_screens/setting.dart';
-import 'package:disneyland_app/services/color_service.dart';
+import 'package:disneyland_app/utility/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

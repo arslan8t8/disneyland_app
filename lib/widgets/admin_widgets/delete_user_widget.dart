@@ -1,4 +1,5 @@
-import 'package:disneyland_app/services/color_service.dart';
+import 'package:disneyland_app/utility/colors.dart';
+
 import 'package:disneyland_app/widgets/buttons.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:flutter/material.dart';

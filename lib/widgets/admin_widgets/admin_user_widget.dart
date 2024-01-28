@@ -1,6 +1,6 @@
 import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/delete_user.dart';
 import 'package:disneyland_app/app_screens/admin_screens/manager_user_screens/update_user.dart';
-import 'package:disneyland_app/services/color_service.dart';
+import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

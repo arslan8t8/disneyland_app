@@ -1,4 +1,4 @@
-import 'package:disneyland_app/services/color_service.dart';
+import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/widgets/bottom_bar.dart';
 import 'package:disneyland_app/widgets/buttons.dart';
 import 'package:disneyland_app/widgets/textfield_widget.dart';
@@ -14,6 +14,10 @@ class AdminLogin extends StatefulWidget {
 
 class _AdminLoginState extends State<AdminLogin> {
   bool obscureText = true;
+
+  //controllers
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

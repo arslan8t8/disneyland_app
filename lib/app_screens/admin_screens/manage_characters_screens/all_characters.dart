@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:disneyland_app/app_screens/admin_screens/manage_characters_screens/add_character.dart';
-import 'package:disneyland_app/services/color_service.dart';
+import 'package:disneyland_app/utility/colors.dart';
 import 'package:disneyland_app/widgets/admin_widgets/admin_character_widget.dart';
 import 'package:disneyland_app/widgets/misc_widget.dart';
 import 'package:disneyland_app/widgets/search_widget.dart';

@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:disneyland_app/app_screens/choose.dart';
-import 'package:disneyland_app/services/color_service.dart';
+import 'package:disneyland_app/utility/colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
