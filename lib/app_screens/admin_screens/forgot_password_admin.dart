@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:disneyland_app/app_screens/admin_screens/reset_password_admin.dart';
 import 'package:disneyland_app/app_screens/user_screens/reset_password.dart';
 import 'package:disneyland_app/services/api_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
@@ -86,16 +87,18 @@ class _ForgotPasswordAdminState extends State<ForgotPasswordAdmin> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => ResetPassword(
+                builder: (context) => ResetPasswordAdmin(
                       email: emailController.text,
                     )));
       } else {
+        printLongString(response.body.toString());
         setState(() {
           isloading = false;
         });
         toastWidget(message: 'Error occured, please try again');
       }
     } catch (ex) {
+      print(ex.toString());
       setState(() {
         isloading = false;
       });

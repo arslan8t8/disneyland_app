@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:disneyland_app/app_screens/admin_screens/admin_login.dart';
 import 'package:disneyland_app/app_screens/user_screens/user_login.dart';
 import 'package:disneyland_app/services/api_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
@@ -158,10 +159,12 @@ class _ResetPasswordAdminState extends State<ResetPasswordAdmin> {
       String link = '$baseUrl$adminEndpoint/reset-password-admin';
 
       var body = {
-        'email': widget.email,
-        'password': newPasswordController.text,
+        'Email': widget.email,
+        'Password': newPasswordController.text,
         'code': codeController.text,
       };
+
+      print(body);
 
       var response = await ApiService().postRequest(link, body);
 
@@ -170,7 +173,7 @@ class _ResetPasswordAdminState extends State<ResetPasswordAdmin> {
           isloading = false;
         });
         toastWidget(message: 'Password reset successful');
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const UserLogin()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AdminLogin()));
       } else {
         print(response.body.toString());
         setState(() {

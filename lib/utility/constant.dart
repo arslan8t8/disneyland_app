@@ -8,6 +8,7 @@ const String adminEndpoint = '/Admin';
 const String usersEndpoint = '/User';
 const String disneylandEndPoint = '/Disneyland';
 const String voteEndpoint = '/Vote';
+const String statsEndpoint = '/Stats';
 
 /// Print Long String
 void printLongString(String text) {
