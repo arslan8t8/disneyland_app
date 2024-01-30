@@ -245,7 +245,7 @@ class _ReportStatsState extends State<ReportStats> {
                                   setState(() {
                                     selectedDuration = newValue!;
                                   });
-                                  getvotesByCharacter(newValue!);
+                                  getvotesByCharacterByTme(newValue!);
                                 },
                                 items: durations.map<DropdownMenuItem<String>>((String value) {
                                   return DropdownMenuItem<String>(
@@ -492,8 +492,7 @@ class _ReportStatsState extends State<ReportStats> {
         isloading = true;
       });
 
-      String link =
-          'https://disneyland.wardrobesetc.com/api/Stats/admin-graph'; //'$baseUrl$statsEndpoint/admin-graph';
+      String link = '$baseUrl$statsEndpoint/admin-graph';
 
       var response = await ApiService().getRequest(link);
 
@@ -538,7 +537,7 @@ class _ReportStatsState extends State<ReportStats> {
         isloading = true;
       });
 
-      String link = 'https://disneyland.wardrobesetc.com/api/Stats/total-votes-by-shift?shift=$s';
+      String link = '$baseUrl$statsEndpoint/total-votes-by-shift?shift=$s';
 
       var response = await ApiService().getRequest(link);
 
@@ -576,7 +575,7 @@ class _ReportStatsState extends State<ReportStats> {
       setState(() {
         isloading = true;
       });
-      String link = 'https://disneyland.wardrobesetc.com/api/Stats/total-votes-by-character?name=$s';
+      String link = '$baseUrl$statsEndpoint/total-votes-by-character?name=$s';
 
       var response = await ApiService().getRequest(link);
 
@@ -589,6 +588,44 @@ class _ReportStatsState extends State<ReportStats> {
 
         setState(() {
           dailyvotes = charactervotes;
+        });
+      } else {
+        printLongString(response.body.toString());
+        //show toast message
+        toastWidget(message: 'Error occured, please try again');
+      }
+    } catch (ex) {
+      setState(() {
+        isloading = false;
+      });
+      //show toast message
+      toastWidget(message: 'Error occured, please try again');
+    } finally {
+      isloading = false;
+      setState(() {});
+    }
+  }
+
+  //getting votes by character by time
+
+  Future getvotesByCharacterByTme(String s) async {
+    try {
+      setState(() {
+        isloading = true;
+      });
+      String link = '$baseUrl$statsEndpoint/total-votes-by-character-by-time?time=$s';
+
+      var response = await ApiService().getRequest(link);
+
+      if (response.statusCode == 200) {
+        printLongString(response.body.toString());
+        var charvotes = jsonDecode(response.body)['data'];
+
+        List<CharacterVotes> charactervotes =
+            charvotes.map<CharacterVotes>((json) => CharacterVotes.fromJson(json)).toList();
+
+        setState(() {
+          characterVotes = charactervotes;
         });
       } else {
         printLongString(response.body.toString());

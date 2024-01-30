@@ -39,7 +39,7 @@ class AdminCharacterWidget extends StatelessWidget {
                   height: 190.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                    image: DecorationImage(image: NetworkImage(character.imageUrl), fit: BoxFit.cover),
+                    image: DecorationImage(image: NetworkImage(character.imageUrl), fit: BoxFit.contain),
                   ),
                   child: Column(
                     children: [

@@ -14,6 +14,7 @@ void main() {
       ChangeNotifierProvider(create: (_) => AdminStateService()),
       ChangeNotifierProvider(create: (_) => UserStateService()),
       ChangeNotifierProvider(create: (_) => CharacterStateService()),
+      ChangeNotifierProvider(create: (_) => SearchState()),
     ],
     child: const MyApp(),
   ));

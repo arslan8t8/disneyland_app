@@ -280,7 +280,7 @@ class _UpdateUserState extends State<UpdateUser> {
         signUpDate: widget.user.signUpDate,
         voteCasted: widget.user.voteCasted,
         profileImage:
-            imageUploadModel == null ? widget.user.profileImage : imageUploadModel!.data.image_url,
+            imageUploadModel == null ? widget.user.profileImage : imageUploadModel!.data.image_url!,
       );
 
       var response = await ApiService().postRequest(link, usertoupdate.toJson());

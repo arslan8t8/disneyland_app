@@ -237,7 +237,8 @@ class _AddAdminState extends State<AddAdmin> {
       setState(() {
         isloading = true;
       });
-      ImageUploadModel? imageUploadModel;
+      String? url;
+
       if (image != null) {
         http.StreamedResponse res = await uploadProcess();
         if (res.statusCode == 200) {
@@ -245,7 +246,9 @@ class _AddAdminState extends State<AddAdmin> {
           printLongString(uploadresponse.toString());
 
           setState(() {
-            imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
+            ImageUploadModel imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
+
+            url = imageUploadModel.data.image_url;
           });
         } else if (res.statusCode == 401) {
           //refetch token bycalling refresh token api
@@ -264,9 +267,10 @@ class _AddAdminState extends State<AddAdmin> {
             if (uploadagain.statusCode == 200) {
               final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
               setState(() {
-                imageUploadModel = ImageUploadModel.fromJson(responseagain);
+                ImageUploadModel imageUploadModel = ImageUploadModel.fromJson(responseagain);
+
+                url = imageUploadModel.data.image_url;
               });
-              print('object:' + imageUploadModel!.toJson().toString());
             } else {
               final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
               printLongString(responseagain.toString());
@@ -288,7 +292,7 @@ class _AddAdminState extends State<AddAdmin> {
           toastWidget(message: 'Error uploading image');
         }
       }
-      printLongString(imageUploadModel!.data.image_url);
+
       String link = '$baseUrl$adminEndpoint/add-admin';
       AdminSignupModel adminSignupModel = AdminSignupModel(
         adminId: 0,
@@ -296,9 +300,8 @@ class _AddAdminState extends State<AddAdmin> {
         email: emailController.text,
         phone: phoneController.text,
         password: passwordController.text,
-        profileImage: imageUploadModel == null
-            ? 'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'
-            : imageUploadModel!.data.image_url,
+        profileImage: url ??
+            'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png',
         isEmailVerified: false,
         signUpDate: DateTime.now().toUtc().toIso8601String(),
       );

@@ -236,7 +236,7 @@ class _AddUserState extends State<AddUser> {
       setState(() {
         isloading = true;
       });
-      ImageUploadModel? imageUploadModel;
+      String? url;
       if (image != null) {
         http.StreamedResponse res = await uploadProcess();
         if (res.statusCode == 200) {
@@ -244,7 +244,9 @@ class _AddUserState extends State<AddUser> {
           printLongString(uploadresponse.toString());
 
           setState(() {
-            imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
+            ImageUploadModel? imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
+
+            url = imageUploadModel.data.image_url;
           });
         } else if (res.statusCode == 401) {
           //refetch token bycalling refresh token api
@@ -263,9 +265,9 @@ class _AddUserState extends State<AddUser> {
             if (uploadagain.statusCode == 200) {
               final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
               setState(() {
-                imageUploadModel = ImageUploadModel.fromJson(responseagain);
+                ImageUploadModel imageUploadModel = ImageUploadModel.fromJson(responseagain);
+                url = imageUploadModel.data.image_url;
               });
-              print('object:' + imageUploadModel!.toJson().toString());
             } else {
               final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
               printLongString(responseagain.toString());
@@ -288,7 +290,6 @@ class _AddUserState extends State<AddUser> {
         }
       }
 
-      printLongString(imageUploadModel!.data.image_url);
       String link = '$baseUrl$usersEndpoint/add-user';
 
       RegisterUserModel newUser = RegisterUserModel(
@@ -296,9 +297,8 @@ class _AddUserState extends State<AddUser> {
           phone: phoneController.text,
           email: emailController.text,
           password: passwordController.text,
-          profileImage: imageUploadModel == null
-              ? 'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'
-              : imageUploadModel!.data.image_url,
+          profileImage: url ??
+              'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png',
           userId: 0,
           isEmailVerified: false,
           signUpDate: DateTime.now().toUtc().toIso8601String(),

@@ -1,5 +1,6 @@
 import 'package:disneyland_app/models/admin_model/admin_model.dart';
 import 'package:disneyland_app/models/character_model/character_model.dart';
+import 'package:disneyland_app/models/misc/search_items.dart';
 import 'package:disneyland_app/models/user_model/user_model.dart';
 import 'package:flutter/material.dart';
 
@@ -143,5 +144,31 @@ class CharacterStateService extends ChangeNotifier {
   //get character by id
   CharacterModel getCharacterById(int id) {
     return allcharacters.firstWhere((element) => element.characterId == id);
+  }
+}
+
+///this class deal with search states
+///
+///
+class SearchState extends ChangeNotifier {
+  List<SearchData> searchItems = [];
+
+  List<SearchData> itemsToshow = [];
+
+  //setting global api token
+  setSearchList(List<SearchData> searchList) {
+    searchItems = searchList;
+    notifyListeners();
+  }
+
+  //set Items to show
+  setItemsToShow(List<SearchData> items) {
+    itemsToshow = items;
+    notifyListeners();
+  }
+
+  //gett all searchItems
+  List<SearchData> getSearchList() {
+    return searchItems;
   }
 }

@@ -251,12 +251,12 @@ class _AddCharacterState extends State<AddCharacter> {
         toastWidget(message: 'Error uploading image');
       }
 
-      printLongString(imageUploadModel!.data.image_url);
+      printLongString(imageUploadModel!.data.image_url!);
       String link = '$baseUrl$disneylandEndPoint/add-character';
       CharacterModel charactertoAdd = CharacterModel(
           characterName: nameController.text,
           description: descriptionController.text,
-          imageUrl: imageUploadModel!.data.image_url,
+          imageUrl: imageUploadModel!.data.image_url!,
           totalVotes: 0,
           isActive: true,
           characterId: 0);

@@ -206,7 +206,7 @@ ImageUploadData _$ImageUploadDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ImageUploadData {
-  String get image_url => throw _privateConstructorUsedError;
+  String? get image_url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -220,7 +220,7 @@ abstract class $ImageUploadDataCopyWith<$Res> {
           ImageUploadData value, $Res Function(ImageUploadData) then) =
       _$ImageUploadDataCopyWithImpl<$Res, ImageUploadData>;
   @useResult
-  $Res call({String image_url});
+  $Res call({String? image_url});
 }
 
 /// @nodoc
@@ -236,13 +236,13 @@ class _$ImageUploadDataCopyWithImpl<$Res, $Val extends ImageUploadData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image_url = null,
+    Object? image_url = freezed,
   }) {
     return _then(_value.copyWith(
-      image_url: null == image_url
+      image_url: freezed == image_url
           ? _value.image_url
           : image_url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -255,7 +255,7 @@ abstract class _$$ImageUploadDataImplCopyWith<$Res>
       __$$ImageUploadDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String image_url});
+  $Res call({String? image_url});
 }
 
 /// @nodoc
@@ -269,13 +269,13 @@ class __$$ImageUploadDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image_url = null,
+    Object? image_url = freezed,
   }) {
     return _then(_$ImageUploadDataImpl(
-      image_url: null == image_url
+      image_url: freezed == image_url
           ? _value.image_url
           : image_url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -289,7 +289,7 @@ class _$ImageUploadDataImpl implements _ImageUploadData {
       _$$ImageUploadDataImplFromJson(json);
 
   @override
-  final String image_url;
+  final String? image_url;
 
   @override
   String toString() {
@@ -325,14 +325,14 @@ class _$ImageUploadDataImpl implements _ImageUploadData {
 }
 
 abstract class _ImageUploadData implements ImageUploadData {
-  factory _ImageUploadData({required final String image_url}) =
+  factory _ImageUploadData({required final String? image_url}) =
       _$ImageUploadDataImpl;
 
   factory _ImageUploadData.fromJson(Map<String, dynamic> json) =
       _$ImageUploadDataImpl.fromJson;
 
   @override
-  String get image_url;
+  String? get image_url;
   @override
   @JsonKey(ignore: true)
   _$$ImageUploadDataImplCopyWith<_$ImageUploadDataImpl> get copyWith =>

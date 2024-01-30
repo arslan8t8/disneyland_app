@@ -18,7 +18,7 @@ abstract class ImageUploadModel with _$ImageUploadModel {
 @freezed
 abstract class ImageUploadData with _$ImageUploadData {
   factory ImageUploadData({
-    required String image_url,
+    required String? image_url,
   }) = _ImageUploadData;
 
   factory ImageUploadData.fromJson(Map<String, dynamic> json) => _$ImageUploadDataFromJson(json);

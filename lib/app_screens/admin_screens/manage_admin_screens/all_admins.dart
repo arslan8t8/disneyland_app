@@ -37,52 +37,63 @@ class _AllAdminsState extends State<AllAdmins> {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: primaryColor,
+            title: const Text(
+              'All Admins',
+              style: TextStyle(color: colorWhite),
+            ),
+            centerTitle: true,
+            //disable back button
+            automaticallyImplyLeading: false,
+          ),
           body: SafeArea(
             child: Column(
               children: [
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 70.h,
-                        decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(30.r),
-                            bottomRight: Radius.circular(30.r),
-                          ),
-                          boxShadow: const [
-                            BoxShadow(
-                              offset: Offset(0, 0),
-                              blurRadius: 20,
-                              color: color1,
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                                Container(
-                                    decoration: BoxDecoration(
-                                      color: colorWhite,
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    width: 265.w,
-                                    height: 50.h,
-                                    child: const SearchWidget()),
-                              ]),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 15.h),
-                    ],
-                  ),
-                ),
+                // SingleChildScrollView(
+                //   child: Column(
+                //     children: [
+                //       Container(
+                //         width: MediaQuery.of(context).size.width,
+                //         height: 70.h,
+                //         decoration: BoxDecoration(
+                //           color: primaryColor,
+                //           borderRadius: BorderRadius.only(
+                //             bottomLeft: Radius.circular(30.r),
+                //             bottomRight: Radius.circular(30.r),
+                //           ),
+                //           boxShadow: const [
+                //             BoxShadow(
+                //               offset: Offset(0, 0),
+                //               blurRadius: 20,
+                //               color: color1,
+                //             ),
+                //           ],
+                //         ),
+                //         child: Padding(
+                //           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                //           child: Column(
+                //             crossAxisAlignment: CrossAxisAlignment.start,
+                //             children: [
+                //               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                //                 Container(
+                //                     decoration: BoxDecoration(
+                //                       color: colorWhite,
+                //                       borderRadius: BorderRadius.circular(10.0),
+                //                     ),
+                //                     width: 265.w,
+                //                     height: 50.h,
+                //                     child: const SearchWidget()),
+                //               ]),
+                //             ],
+                //           ),
+                //         ),
+                //       ),
+                //       SizedBox(height: 15.h),
+                //     ],
+                //   ),
+                // ),
+
                 isloading
                     ? loadingWidget()
                     : Expanded(

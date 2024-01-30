@@ -25,7 +25,7 @@ Map<String, dynamic> _$$ImageUploadModelImplToJson(
 _$ImageUploadDataImpl _$$ImageUploadDataImplFromJson(
         Map<String, dynamic> json) =>
     _$ImageUploadDataImpl(
-      image_url: json['image_url'] as String,
+      image_url: json['image_url'] as String?,
     );
 
 Map<String, dynamic> _$$ImageUploadDataImplToJson(

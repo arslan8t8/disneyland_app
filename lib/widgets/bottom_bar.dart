@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
 
 import 'package:disneyland_app/app_screens/admin_screens/manage_admin_screens/all_admins.dart';
 import 'package:disneyland_app/app_screens/admin_screens/manage_characters_screens/all_characters.dart';
@@ -48,55 +48,59 @@ class _MainPageState extends State<BottomBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      bottomNavigationBar: Wrap(
-        children: [
-          Container(
-            height: 75.h,
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, -4),
-                  blurRadius: 15,
-                  color: colorBlack.withOpacity(0.10),
-                ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius:
-                  BorderRadius.only(topLeft: Radius.circular(15.r), topRight: Radius.circular(15.r)),
-              child: BottomNavigationBar(
-                backgroundColor: colorWhite,
-                elevation: 0,
-                selectedLabelStyle: GoogleFonts.montserrat(
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-                unselectedLabelStyle: GoogleFonts.montserrat(
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-                selectedItemColor: color4,
-                unselectedItemColor: primaryColor,
-                currentIndex: _selectedIndex,
-                onTap: _navigateBottomBar,
-                type: BottomNavigationBarType.fixed,
-                items: [
-                  BottomNavigationBarItem(
-                      icon: Icon(CupertinoIcons.wand_stars_inverse, size: 25), label: 'Characters'),
-                  BottomNavigationBarItem(icon: Icon(Icons.groups_2, size: 25), label: 'Users'),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.admin_panel_settings_sharp, size: 25), label: 'Admins'),
-                  BottomNavigationBarItem(icon: Icon(Icons.auto_graph_sharp, size: 25), label: 'Stats'),
-                  BottomNavigationBarItem(icon: Icon(Icons.settings, size: 25), label: 'Setting'),
+    return WillPopScope(
+      onWillPop: () async => false, //disable back button
+      child: Scaffold(
+        extendBody: true,
+        bottomNavigationBar: Wrap(
+          children: [
+            Container(
+              height: 75.h,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, -4),
+                    blurRadius: 15,
+                    color: colorBlack.withOpacity(0.10),
+                  ),
                 ],
               ),
+              child: ClipRRect(
+                borderRadius:
+                    BorderRadius.only(topLeft: Radius.circular(15.r), topRight: Radius.circular(15.r)),
+                child: BottomNavigationBar(
+                  backgroundColor: colorWhite,
+                  elevation: 0,
+                  selectedLabelStyle: GoogleFonts.montserrat(
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  unselectedLabelStyle: GoogleFonts.montserrat(
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  selectedItemColor: color4,
+                  unselectedItemColor: primaryColor,
+                  currentIndex: _selectedIndex,
+                  onTap: _navigateBottomBar,
+                  type: BottomNavigationBarType.fixed,
+                  items: [
+                    BottomNavigationBarItem(
+                        icon: Icon(CupertinoIcons.wand_stars_inverse, size: 25), label: 'Characters'),
+                    BottomNavigationBarItem(icon: Icon(Icons.groups_2, size: 25), label: 'Users'),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.admin_panel_settings_sharp, size: 25), label: 'Admins'),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.auto_graph_sharp, size: 25), label: 'Stats'),
+                    BottomNavigationBarItem(icon: Icon(Icons.settings, size: 25), label: 'Setting'),
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
+        body: _pages![_selectedIndex],
       ),
-      body: _pages![_selectedIndex],
     );
   }
 }

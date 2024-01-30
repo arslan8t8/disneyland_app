@@ -282,7 +282,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
         adminName: nameController.text,
         email: emailController.text,
         phone: phoneController.text,
-        profileImage: image == null ? widget.admin.profileImage : imageUploadModel!.data.image_url,
+        profileImage: image == null ? widget.admin.profileImage : imageUploadModel!.data.image_url!,
         isEmailVerified: false,
         signUpDate: widget.admin.signUpDate,
       );

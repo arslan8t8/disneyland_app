@@ -261,13 +261,13 @@ class _UpdateCharacterState extends State<UpdateCharacter> {
         }
       }
 
-      printLongString(imageUploadModel!.data.image_url);
+      printLongString(imageUploadModel!.data.image_url!);
       String link = '$baseUrl$disneylandEndPoint/update-character';
       CharacterModel charactertoupdate = CharacterModel(
           characterName: nameController.text,
           description: descriptionController.text,
           imageUrl:
-              imageUploadModel == null ? widget.character.imageUrl : imageUploadModel!.data.image_url,
+              imageUploadModel == null ? widget.character.imageUrl : imageUploadModel!.data.image_url!,
           totalVotes: widget.character.totalVotes,
           isActive: true,
           characterId: widget.character.characterId);
