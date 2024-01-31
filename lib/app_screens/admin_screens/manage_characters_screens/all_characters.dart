@@ -154,7 +154,6 @@ class _AllCharactersState extends State<AllCharacters> {
       String link = '$baseUrl$disneylandEndPoint/disneyland-characters';
       var response = await ApiService().getRequest(link);
       if (response.statusCode == 200) {
-        printLongString(response.body);
         CharacterData characterData = CharacterData.fromJson(jsonDecode(response.body));
         //set state
         Provider.of<CharacterStateService>(context, listen: false).setAllCharacters(characterData.data);

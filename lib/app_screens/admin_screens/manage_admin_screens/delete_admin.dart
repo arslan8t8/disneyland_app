@@ -78,8 +78,6 @@ class _DeleteAdminState extends State<DeleteAdmin> {
 
       String link = '$baseUrl$adminEndpoint/delete-admin?id=${widget.adminId}';
 
-      print(link);
-
       var response = await ApiService().deleteRequest(link);
 
       if (response.statusCode == 200) {
@@ -91,7 +89,6 @@ class _DeleteAdminState extends State<DeleteAdmin> {
         toastWidget(message: 'Error occured, please try again');
       }
     } catch (ex) {
-      print(ex.toString());
       setState(() {
         isloading = false;
       });

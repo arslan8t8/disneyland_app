@@ -147,7 +147,6 @@ class _AdminLoginState extends State<AdminLogin> {
         setState(() {
           isloading = false;
         });
-        printLongString(response.body.toString());
 
         CurrentAdminModel admin = CurrentAdminModel.fromJson(jsonDecode(response.body));
 

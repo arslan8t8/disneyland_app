@@ -229,7 +229,6 @@ class _UpdateAdminState extends State<UpdateAdmin> {
         http.StreamedResponse res = await uploadProcess();
         if (res.statusCode == 200) {
           final uploadresponse = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-          printLongString(uploadresponse.toString());
 
           setState(() {
             imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
@@ -253,16 +252,13 @@ class _UpdateAdminState extends State<UpdateAdmin> {
               setState(() {
                 imageUploadModel = ImageUploadModel.fromJson(responseagain);
               });
-              print('object:' + imageUploadModel!.toJson().toString());
             } else {
               final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
-              printLongString(responseagain.toString());
 
               toastWidget(message: 'Error uploading image');
               return;
             }
           } else {
-            printLongString(token_response.body);
             setState(() {
               isloading = false;
             });
@@ -271,7 +267,7 @@ class _UpdateAdminState extends State<UpdateAdmin> {
           }
         } else {
           final response = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-          printLongString(response.toString());
+
           toastWidget(message: 'Error uploading image');
         }
       }
@@ -298,15 +294,12 @@ class _UpdateAdminState extends State<UpdateAdmin> {
         toastWidget(message: 'Admin added successfully');
         Navigator.pop(context);
       } else {
-        printLongString(response.body.toString());
-
         //gettign message from response
         var message = jsonDecode(response.body)['message'];
         //show toast message
         toastWidget(message: message);
       }
     } catch (ex) {
-      printLongString(ex.toString());
       setState(() {
         isloading = false;
       });
@@ -333,7 +326,6 @@ class _UpdateAdminState extends State<UpdateAdmin> {
 
     request.headers.addAll(headers);
 
-    printLongString(request.fields.toString());
     var res = await request.send();
     return res;
   }

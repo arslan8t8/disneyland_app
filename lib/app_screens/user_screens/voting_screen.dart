@@ -65,6 +65,9 @@ class _VotingScreenState extends State<VotingScreen> {
             child: SingleChildScrollView(
                 child: Column(
               children: [
+                SizedBox(
+                  height: 10.h,
+                ),
                 GridView.builder(
                   shrinkWrap: true,
                   primary: false,
@@ -79,6 +82,9 @@ class _VotingScreenState extends State<VotingScreen> {
                       character: allcahracters[index],
                     );
                   },
+                ),
+                SizedBox(
+                  height: 30.h,
                 ),
               ],
             )),
@@ -95,7 +101,6 @@ class _VotingScreenState extends State<VotingScreen> {
       String link = '$baseUrl$disneylandEndPoint/disneyland-characters';
       var response = await ApiServiceUser().getRequest(link);
       if (response.statusCode == 200) {
-        printLongString(response.body);
         CharacterData characterData = CharacterData.fromJson(jsonDecode(response.body));
         //set state
         Provider.of<CharacterStateService>(context, listen: false).setAllCharacters(characterData.data);

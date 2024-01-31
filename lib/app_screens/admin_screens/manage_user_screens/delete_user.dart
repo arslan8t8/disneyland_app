@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:disneyland_app/services/api_service.dart';
 import 'package:disneyland_app/services/state_service.dart';
 import 'package:disneyland_app/utility/colors.dart';
@@ -77,8 +79,6 @@ class _DeleteUserState extends State<DeleteUser> {
 
       String link = '$baseUrl$usersEndpoint/delete-user?id=${widget.userId}';
 
-      print(link);
-
       var response = await ApiService().deleteRequest(link);
 
       if (response.statusCode == 200) {
@@ -90,7 +90,6 @@ class _DeleteUserState extends State<DeleteUser> {
         toastWidget(message: 'Error occured, please try again');
       }
     } catch (ex) {
-      printLongString(ex.toString());
       setState(() {
         isloading = false;
       });

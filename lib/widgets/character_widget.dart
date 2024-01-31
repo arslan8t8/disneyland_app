@@ -57,7 +57,7 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                       //add some dummy image url
 
                       image: DecorationImage(
-                          image: NetworkImage(widget.character.imageUrl), fit: BoxFit.cover),
+                          image: NetworkImage(widget.character.imageUrl), fit: BoxFit.contain),
                     ),
                   ),
                   SizedBox(height: 10.h),
@@ -107,7 +107,6 @@ class _CharacterWidgetState extends State<CharacterWidget> {
       var response = await ApiServiceUser().postRequest(link, body);
 
       if (response.statusCode == 200) {
-        printLongString(response.body.toString());
         Navigator.push(context, MaterialPageRoute(builder: (context) => const SuccessVoteScreen()));
       } else {
         toastWidget(message: 'Error occured, please try again');

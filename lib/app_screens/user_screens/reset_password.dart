@@ -173,7 +173,6 @@ class _ResetPasswordState extends State<ResetPassword> {
         toastWidget(message: 'Password reset successful');
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const UserLogin()));
       } else {
-        print(response.body.toString());
         setState(() {
           isloading = false;
         });

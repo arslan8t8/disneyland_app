@@ -205,7 +205,6 @@ class _AddCharacterState extends State<AddCharacter> {
       http.StreamedResponse res = await uploadProcess();
       if (res.statusCode == 200) {
         final uploadresponse = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-        printLongString(uploadresponse.toString());
 
         setState(() {
           imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
@@ -229,16 +228,13 @@ class _AddCharacterState extends State<AddCharacter> {
             setState(() {
               imageUploadModel = ImageUploadModel.fromJson(responseagain);
             });
-            print('object:' + imageUploadModel!.toJson().toString());
           } else {
             final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
-            printLongString(responseagain.toString());
 
             toastWidget(message: 'Error uploading image');
             return;
           }
         } else {
-          printLongString(token_response.body);
           setState(() {
             isloading = false;
           });
@@ -247,11 +243,10 @@ class _AddCharacterState extends State<AddCharacter> {
         }
       } else {
         final response = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-        printLongString(response.toString());
+
         toastWidget(message: 'Error uploading image');
       }
 
-      printLongString(imageUploadModel!.data.image_url!);
       String link = '$baseUrl$disneylandEndPoint/add-character';
       CharacterModel charactertoAdd = CharacterModel(
           characterName: nameController.text,
@@ -272,15 +267,12 @@ class _AddCharacterState extends State<AddCharacter> {
         toastWidget(message: 'Character added successfully');
         Navigator.pop(context);
       } else {
-        printLongString(response.body.toString());
-
         //gettign message from response
         var message = jsonDecode(response.body)['message'];
         //show toast message
         toastWidget(message: message);
       }
     } catch (ex) {
-      printLongString(ex.toString());
       setState(() {
         isloading = false;
       });
@@ -308,7 +300,6 @@ class _AddCharacterState extends State<AddCharacter> {
 
     request.headers.addAll(headers);
 
-    printLongString(request.fields.toString());
     var res = await request.send();
     return res;
   }

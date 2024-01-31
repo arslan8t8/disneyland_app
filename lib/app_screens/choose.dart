@@ -204,7 +204,6 @@ class _UserChoiceState extends State<UserChoice> {
       var response = await ApiServiceUser().postRequest(link, newUser.toJson());
 
       if (response.statusCode == 200) {
-        printLongString(response.body.toString());
         UserInfo user = UserInfo.fromJson(jsonDecode(response.body));
         TokenService.instance.setApiTokenValue(user.data.token);
         //update user value in token service
@@ -218,15 +217,12 @@ class _UserChoiceState extends State<UserChoice> {
         toastWidget(message: 'Signup successful');
         Navigator.push(context, MaterialPageRoute(builder: (context) => const VotingScreen()));
       } else {
-        printLongString(response.body.toString());
-
         //getting message from body
         var message = jsonDecode(response.body)['message'];
         //show toast message
         toastWidget(message: message);
       }
     } catch (ex) {
-      print(ex.toString());
       setState(() {
         isloading = false;
       });

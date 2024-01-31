@@ -147,15 +147,12 @@ class _AllUsersState extends State<AllUsers> {
       var response = await ApiService().getRequest(link);
 
       if (response.statusCode == 200) {
-        printLongString(response.body);
         AllUsersModel allUsersModel = AllUsersModel.fromJson(jsonDecode(response.body));
         context.read<UserStateService>().setAllUsers(allUsersModel.data);
       } else {
-        printLongString(response.body);
         toastWidget(message: 'Error occured, please try again');
       }
     } catch (ex) {
-      printLongString(ex.toString());
       setState(() {
         isloading = false;
       });

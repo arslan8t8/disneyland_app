@@ -206,7 +206,6 @@ class _ChangePasswordState extends State<ChangePassword> {
         toastWidget(message: message);
       }
     } catch (ex) {
-      print(ex.toString());
       setState(() {
         isloading = false;
       });

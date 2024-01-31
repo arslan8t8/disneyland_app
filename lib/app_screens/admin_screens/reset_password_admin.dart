@@ -164,8 +164,6 @@ class _ResetPasswordAdminState extends State<ResetPasswordAdmin> {
         'code': codeController.text,
       };
 
-      print(body);
-
       var response = await ApiService().postRequest(link, body);
 
       if (response.statusCode == 200) {
@@ -175,7 +173,6 @@ class _ResetPasswordAdminState extends State<ResetPasswordAdmin> {
         toastWidget(message: 'Password reset successful');
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AdminLogin()));
       } else {
-        print(response.body.toString());
         setState(() {
           isloading = false;
         });

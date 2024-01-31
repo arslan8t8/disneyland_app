@@ -91,14 +91,12 @@ class _ForgotPasswordAdminState extends State<ForgotPasswordAdmin> {
                       email: emailController.text,
                     )));
       } else {
-        printLongString(response.body.toString());
         setState(() {
           isloading = false;
         });
         toastWidget(message: 'Error occured, please try again');
       }
     } catch (ex) {
-      print(ex.toString());
       setState(() {
         isloading = false;
       });

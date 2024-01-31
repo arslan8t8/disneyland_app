@@ -150,7 +150,7 @@ class _UpdateUserState extends State<UpdateUser> {
                       child: isloading
                           ? loadingWidget()
                           : PrimaryButton(
-                              text: 'Add User',
+                              text: 'Update User',
                               onPressed: () {
                                 if (formKey.currentState!.validate()) {
                                   saveUser();
@@ -223,7 +223,6 @@ class _UpdateUserState extends State<UpdateUser> {
         http.StreamedResponse res = await uploadProcess();
         if (res.statusCode == 200) {
           final uploadresponse = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-          printLongString(uploadresponse.toString());
 
           setState(() {
             imageUploadModel = ImageUploadModel.fromJson(uploadresponse);
@@ -247,16 +246,13 @@ class _UpdateUserState extends State<UpdateUser> {
               setState(() {
                 imageUploadModel = ImageUploadModel.fromJson(responseagain);
               });
-              print('object:' + imageUploadModel!.toJson().toString());
             } else {
               final responseagain = jsonDecode(String.fromCharCodes(await uploadagain.stream.toBytes()));
-              printLongString(responseagain.toString());
 
               toastWidget(message: 'Error uploading image');
               return;
             }
           } else {
-            printLongString(token_response.body);
             setState(() {
               isloading = false;
             });
@@ -265,7 +261,7 @@ class _UpdateUserState extends State<UpdateUser> {
           }
         } else {
           final response = jsonDecode(String.fromCharCodes(await res.stream.toBytes()));
-          printLongString(response.toString());
+
           toastWidget(message: 'Error uploading image');
         }
       }
@@ -294,15 +290,12 @@ class _UpdateUserState extends State<UpdateUser> {
         toastWidget(message: 'user added successfully');
         Navigator.pop(context);
       } else {
-        printLongString(response.body.toString());
-
         //gettign message from response
         var message = jsonDecode(response.body)['message'];
         //show toast message
         toastWidget(message: message);
       }
     } catch (ex) {
-      printLongString(ex.toString());
       setState(() {
         isloading = false;
       });
@@ -329,7 +322,6 @@ class _UpdateUserState extends State<UpdateUser> {
 
     request.headers.addAll(headers);
 
-    printLongString(request.fields.toString());
     var res = await request.send();
     return res;
   }

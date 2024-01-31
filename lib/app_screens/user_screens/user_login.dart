@@ -144,7 +144,7 @@ class _UserLoginState extends State<UserLogin> {
         setState(() {
           isloading = false;
         });
-        printLongString(response.body.toString());
+
         UserInfo user = UserInfo.fromJson(jsonDecode(response.body));
         TokenService.instance.setApiTokenValue(user.data.token);
         //update user value in token service
@@ -168,7 +168,6 @@ class _UserLoginState extends State<UserLogin> {
         toastWidget(message: message);
       }
     } catch (ex) {
-      print(ex.toString());
       setState(() {
         isloading = false;
       });

@@ -509,15 +509,11 @@ class _ReportStatsState extends State<ReportStats> {
 
           shiftCharacter = morningdata.expand((shiftVote) => shiftVote.characters!).toList();
         });
-
-        print(shiftCharacter.length);
       } else {
-        printLongString(response.body.toString());
         //show toast message
         toastWidget(message: 'Error occured, please try again');
       }
     } catch (ex) {
-      print(ex.toString());
       setState(() {
         isloading = false;
       });
@@ -551,12 +547,10 @@ class _ReportStatsState extends State<ReportStats> {
           shiftCharacter = shiftvotes;
         });
       } else {
-        printLongString(response.body.toString());
         //show toast message
         toastWidget(message: 'Error occured, please try again');
       }
     } catch (ex) {
-      print(ex.toString());
       setState(() {
         isloading = false;
       });
@@ -580,17 +574,15 @@ class _ReportStatsState extends State<ReportStats> {
       var response = await ApiService().getRequest(link);
 
       if (response.statusCode == 200) {
-        printLongString(response.body.toString());
         var charvotes = jsonDecode(response.body)['data'];
 
         List<DailyVotes> charactervotes =
-            charvotes.map<CharacterVotes>((json) => CharacterVotes.fromJson(json)).toList();
+            charvotes.map<DailyVotes>((json) => DailyVotes.fromJson(json)).toList();
 
         setState(() {
           dailyvotes = charactervotes;
         });
       } else {
-        printLongString(response.body.toString());
         //show toast message
         toastWidget(message: 'Error occured, please try again');
       }
@@ -618,7 +610,6 @@ class _ReportStatsState extends State<ReportStats> {
       var response = await ApiService().getRequest(link);
 
       if (response.statusCode == 200) {
-        printLongString(response.body.toString());
         var charvotes = jsonDecode(response.body)['data'];
 
         List<CharacterVotes> charactervotes =
@@ -628,7 +619,6 @@ class _ReportStatsState extends State<ReportStats> {
           characterVotes = charactervotes;
         });
       } else {
-        printLongString(response.body.toString());
         //show toast message
         toastWidget(message: 'Error occured, please try again');
       }

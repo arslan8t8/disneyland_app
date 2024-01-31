@@ -78,7 +78,6 @@ class _DeleteCharacterState extends State<DeleteCharacter> {
       String link = '$baseUrl$disneylandEndPoint/delete-character?id=${widget.id}';
       var response = await ApiService().deleteRequest(link);
       if (response.statusCode == 200) {
-        printLongString(response.body);
         context.read<CharacterStateService>().deleteCharacter(widget.id);
         //show toast message
         toastWidget(message: 'Character deleted successfully');

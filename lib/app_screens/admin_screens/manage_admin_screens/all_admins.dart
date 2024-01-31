@@ -150,7 +150,6 @@ class _AllAdminsState extends State<AllAdmins> {
         setState(() {
           isloading = false;
         });
-        printLongString(response.body.toString());
 
         AdminModel admins = AdminModel.fromJson(jsonDecode(response.body));
         //setting state for admins
