@@ -7,8 +7,8 @@ Future<bool?> toastWidget({required String message}) async {
     msg: message,
     toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.BOTTOM,
-    backgroundColor: Colors.black,
-    textColor: Colors.white,
+    backgroundColor: const Color.fromARGB(255, 242, 240, 240),
+    textColor: const Color.fromARGB(255, 4, 0, 0),
     fontSize: 16.0,
   );
 }
